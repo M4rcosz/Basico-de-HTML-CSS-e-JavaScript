@@ -364,31 +364,376 @@ console.log('Teste')
     // função exibe se cada valor é impar ou par
         // exibirTipo(5);
         // function exibirTipo(limite){
-        //    let i = 1;
-        //    while(i <=limite){
-        //         a = i
-        //         i = limite
-        //     if(i % 2 !==0){
-        //         console.log(i + 'IMPAR');
-        //     }
-        //     i = a
-        // }++i;
-        //     while(i <=limite){
-        //         b = i
-        //         i = limite
-        //      if(i % 2 ===0){
-        //         console.log(i + 'PAR');
-        //     }
-        //     i = b
-        //     }++i;
+        // for(let i = 0; i<= limite; i++){
+        //     if(i % 2 ===0)
+        //     console.log(i,'PAR')
+        //     else 
+        //     console.log(i,'IMPAR')
         // }
+        // }
+// Encontre o string
+    // Criar um método para ler propriedades de um objeto e
+    // exibir somente as propriedades do tipo string que estão nesse objeto
+    // const filme = {
+    //     titulo: 'Vingadores',
+    //     ano: 2018,
+    //     diretor: 'Robin',
+    //     personagem: 'Thor'
+    // }
+    // exibirPropriedades(filme)
+    // function exibirPropriedades(obj){
+    //     for(let prop in obj){
+    //         if(typeof obj[prop] ==='string')
+    //         console.log(prop,obj[prop])
+    //     }
+    // }
+// Multiplos de 3 e 5
+    // Criar função somar que retorna a
+    // soma de todos os multiplos de 3 e 5
 
+    // Multiplos de 3
+    // 3,6,9...
+    // Multiplos de 5
+    // 5,10...
 
+    // Somando os multiplos
+    // armazenar os multiplos de 3
+    // armazenar os multiplos de 5
+    // somar os dois
+        // somar(20);
+        // function somar(limite){
+        //     let mult3 = 0;
+        //     let mult5 = 0;
+        //     for(i = 0; i<= limite; i++){
+        //         if(i % 3 ===0)
+        //         mult3 += i;
+        //         if(i % 5 ===0)
+        //         mult5 += i;
+        //     }
+        //     console.log(mult3 + mult5);
+        // }
+// Exercíicio média escolar
+    // obter a média a partir de um array
+    // 0-59 F
+    // 60-69 D
+    // 70-79 C
+    // 80-89 B
+    // 90-100 A
+        // const array = [70,70,80];
 
+        // console.log(mediaDoAluno(array));
 
+        // function mediaDoAluno(notas){      
+        // const media = calcularMedia(notas);
+            
+        //     if(media < 59) return 'F';
+        //     if(media < 69) return 'D';
+        //     if(media < 79) return 'C';
+        //     if(media < 89) return 'B';
+        //     if(media > 90) return 'A';
+        // } 
+        // function calcularMedia(array){
+        //     let soma = 0;
+        //     for(let valor of array){
+        //     soma += valor;
+        //     }
+        //     return soma/(array.length);
+        // }
+// Contador de Asteriscos
+    // Criar uma função que exibe a quantidade de * que aquela linha possui
+    // exibirAsteriscos(5);
 
-// let i = 5;
-    // while(i >=5){
-    //     if(i % 2 !==0){
-    //         console.log('Biruta Maximo',i)
-    //     }--i;
+    //     function exibirAsteriscos(linhas){
+            // let padrao = '';             
+            // for(let linha = 0;linha <= linhas; linha++){ 
+            //     padrao += '*';      
+            //     console.log(padrao);
+            // }
+                // for(let linha = 1; linha<= linhas; linha++){
+                //     let padrao = '';
+                //     for(let i = 0; i < linha; i++)
+                //     padrao += '*';
+                //     console.log(padrao)
+                // }
+         // }
+// Números Primos
+    // Criar uma função para mostrar todos os números dentro de um limite selecionado
+        // exibirNumerosPrimos(15);
+
+        //     function exibirNumerosPrimos(limite){
+        //         for(let numero = 2; numero<= limite; numero++){
+        //             if(numeroPrimo(numero)) console.log(numero);
+        //         }
+        //     }
+        //     function numeroPrimo(numero){
+        
+        //         for(let divisor = 2; divisor < numero; divisor++){
+        //             if(numero % divisor ===0) {
+        //                 return false;
+        //             }
+        //         }
+        //         return true;
+        //     }
+// 12 - Factory Function
+    // const pcGamer = {
+    //     processador: 'Ryzen 3 3200G',
+    //     placaMae: 'A320 Asus',
+    //     capacidadeMemoriaRAM: 16 + '' +'GB',
+    //     fonte: 500 +  'W' + ' ' + 'GameMax',
+    //     ligar : function(){
+    //         console.log('Ligando Computador...')
+    //     }
+    // }
+// PASSANDO PARA FACTORY FUNCTION (Facilitador de 'Criação')
+    // function criarPcGamer(processador,placaMae,capacidadeMemoriaRAM,fonte){
+    //    return {
+    //     processador,
+    //     placaMae,
+    //     capacidadeMemoriaRAM: capacidadeMemoriaRAM + ' ' + 'GB' + ' ' + 'RAM',
+    //     fonte,
+    //     ligar(){
+    //         console.log('Ligando Computador...')
+    //     }
+    // }
+    // }
+    // const pcGamer1 = criarPcGamer('Ryzen 5 5600G','Tomahawk B540', 32, 800 + ' ' + 'GameMax');
+    // console.log(pcGamer1);
+// 13 - Constructor Functions
+            // camelCase - umDoisTresQuatroCinco
+                // function criarPcGamer(processador,placaMae,capacidadeMemoriaRAM,fonte){
+                //    return {
+                //     processador,
+                //     placaMae,
+                //     capacidadeMemoriaRAM: capacidadeMemoriaRAM + ' ' + 'GB' + ' ' + 'RAM',
+                //     fonte,
+                //     ligar(){
+                //         console.log('Ligando Computador...')
+                //     }
+                // }
+                // }
+                // const pcGamer1 = criarPcGamer('Ryzen 5 5600G','Tomahawk B540', 32, 800 + ' ' + 'GameMax');
+                // console.log(pcGamer1);
+            // Palcal Case - UmDoisTresQuatroCinco
+                // function PC_Gamer(processador,placaMae,capacidadeMemoriaRAM,fonte){
+                //     this.processador = processador,
+                //     this.placaMae = placaMae,
+                //     this.capacidadeMemoriaRAM = capacidadeMemoriaRAM + 'GB' + ' ' + 'RAM',
+                //     this.fonte = fonte,
+                //     this.ligar = function (){
+                //         console.log('Ligando Computador...')
+                //     }
+                // }
+                // const pc = new PC_Gamer('Ryzen 3 2200G','AsRock B320',8, '500W Gigabyte')
+                // console.log(pc);
+// 14 - Natureza dinâmica dos objetos
+    // const pessoa = {
+    //     altura: 1.70,
+    //     nome: 'Messi',
+    //     nacionalidade: 'Argentino'
+    // }
+    // pessoa.peso = 65;
+    // pessoa.contatar = function(){
+    //     console.log('contatando Messi');
+    // }
+    // delete pessoa.altura;
+    // delete pessoa.peso;
+    // delete pessoa.contatar;
+    // pessoa.idade = 35 + ' ' + 'Anos';
+    // console.log(pessoa);
+// 15 - Clonar Objetos
+    // Objeto Alvo:
+        // const pcGamer = {
+        //     processador: 'Ryzen 3 3200G',
+        //     placaMae: 'A320 Asus',
+        //     capacidadeMemoriaRAM: 16 + '' +'GB',
+        //     fonte: 500 +  'W' + ' ' + 'GameMax',
+        //     ligar : function(){
+            //     console.log('Ligando Computador...')
+        //     }
+        // }
+    // Método 1
+        // const clonePcGamer = Object.assign({
+        //     placaVideo: 'RTX 3080 Gigabyte'- 'Capacidade de alteração'
+        // },pcGamer);
+        // console.log(clonePcGamer);
+    // Método 2
+        // const clonePcGamer2 = {...pcGamer};
+        // console.log(clonePcGamer2);
+// 16 - Math - Utilizar o site guia (Mozilla)
+    // Existem diversas funcionalidade com Math
+    // Alguns exemplos são:
+    // Math.random() - Gera um valor aleatório, e pode ser configurado com um valor max e um valor min
+    // Math.floor() - Arredonda um valor 'não exato', como número decimal para o valor mais baixo desse decimal
+    // Ex: 4.2 ===> 4
+    // Existem inumeros outros com diversas funcionalidades que podem ser utilizadas
+// 17 - String Objeto - Utilizar o site guia (Mozilla)
+    // Tipo Primitivo
+        // const mensagem = 'minha primeira mensagem';
+    // Tipo Objeto
+        // const outraMensagem = new String('bom dia');
+// Funcionalidades do console
+    // Tudo abaixo seria usado no console (-) = mensagem do console
+        //typeof mensagem - "string"
+        //typeof outraMensagem - "object"
+        //outraMensagem.length - 7 (COMPRIMENTO)
+        //outraMensagem[2] - "m" (indice da mensagem)
+        //mensagem.includes('primeira') - true
+        //mensagem.includes('vermelho') - false
+        //mensagem.startsWith('verde') - false
+        //mensagem.startsWith('minha') - true
+        //mensagem.endsWith('mensagem') - true 
+        //mensagem.indexOf('primeira') - 6 [indice de quando x mensagem na string]
+        //mensagem.replace('minha','sua') - "sua primeira mensagem"
+        //mensagem.trim() - "minha primeira mensagem" [Esse comando remove espaços excedentes na string]
+        //mensagem.split(' ') - 0: "minha"/ 1: "primeira"/ 2: "mensagem" [Divide/separa as palavras com espaço entre elas]
+// 18 - Template Literal
+    // Sequências de Escape
+        // '[\n = Quebra de linha]' [Metodo antigo e poluído]
+            // const mensagem = 'Primeira Linha\nSegunda \'Linha\''; - 
+            // console.log(mensagem)
+        // Object {}
+        // Boolean true,false
+        // string '',""
+    // Template (``)[Novo metodo, mais limpo e literal]
+//     const mensagemLiteral =
+// `Minha mensagem
+// de forma 'literal'
+
+// mantendo a formatação
+
+// sem poluir`;
+//     console.log(mensagemLiteral);
+    // Substituir váriavel com Template [DESTAQUE]
+//     const nome = 'Marcos';
+//     const mensagem = 
+// `Olá ${nome}, tenho ${10+8} anos.`; - 'Substituindo ou colocando valores com o Template'
+// console.log(mensagem);
+// 19 - Data 
+    // const data1 = new Date();
+    // console.log(data1);
+    // const data2 = new Date('April 06 2023 18:30');
+    // console.log(data2);
+    // const data3 = new Date(2023,02,16,18,32);
+    // console.log(data3);
+    // data2.setFullYear(2024);
+    // console.log(data2);
+        // [NO CONSOLE]
+            // data2.toDateString() - [Transformar data em string]
+            // 'Sat Apr 06 2024' 
+            // data2.toTimeString() - [Transformar hora em string]
+            // '18:30:00 GMT-0300 (Horário Padrão de Brasília)'
+            // data2.toISOString() - [Transformar data em informações/dados para usar em Banco de Dados]
+            // '2024-04-06T21:30:00.000Z'
+// Objeto endereço
+    // Criar um objeto endereço que contenha:
+    // Rua
+    // Cidade
+    // CEP
+    // exibirEndereço(Endereço)
+        // const endereco1 = {
+        //     rua: 'José Antônio de Magalhães',
+        //     cidade: 'Caldas Novas',
+        //     CEP: 82537 + '-' + '091'
+        // };
+        // exibirEndereco(endereco1)
+        
+        // function exibirEndereco(endereco){
+        //     for(chave in endereco)
+        //     console.log(chave,endereco[chave]);
+        // }
+// Encontre a igualdade
+    //     function Endereco(rua,cidade,cep){
+    //         this.rua = rua,
+    //         this.cidade = cidade,
+    //         this.cep = cep
+    //     };
+
+    //     const endereco1 = new Endereco('A','B','C')
+    //     const endereco2 = new Endereco('A','B','C')
+
+    //     function saoIguais(endereco1,endereco2){
+    //         // [COMPARANDO SE AS PROPRIEDADES SÃO IGUAIS]
+    //       return endereco1.rua === endereco2.rua &&
+    //             endereco1.cidade === endereco2.cidade &&
+    //             endereco1.cep === endereco2.cep
+    //     }
+    //     console.log(saoIguais(endereco1,endereco2));
+
+    //     function temEnderecoMemoriaIgual(endereco1,endereco2){
+    //         // [COMPARANDO SE A REFERÊNCIA DO OBJETO APONTA PARA O MESMO 'LOCAL NA MEMORIA'!]
+    //         return endereco1 === endereco2
+    //     }
+    // console.log(temEnderecoMemoriaIgual(endereco1,endereco2));
+// Postagem
+    // let postagem = {
+    //     titulo: 'a',
+    //     mensagem: 'b',
+    //     autor: 'c',
+    //     visualizacoes: 10,
+    //     comentarios: [
+    //         {autor: 'a', mensagem: 'b'},
+    //         {autor: 'a', mensagem: 'b'}
+    //     ],
+    //     estaAoVivo: true
+
+    // };
+    // console.log(postagem);
+// Postagem com construction function
+    // function Postagem(titulo,mensagem,autor){
+    //     this.titulo = titulo,
+    //     this.mensagem = mensagem,
+    //     this.autor = autor,
+    //     this.visualizacoes = 0,
+    //     this.comentario = [],
+    //     this.estaAoVivo = false
+    // };
+    // let postagem1 = new Postagem('The Title','The Message','The Author');
+    // console.log(postagem1);
+    // for(info in postagem1){
+    //     console.log(info,postagem1[info])
+    // };
+// Faixa de preços
+    // tooltips/minimo/maximo
+    // Primeira Opção
+        // let faixa = [
+        //     {tooltips: 'Até R$700',minimo: 0,maximo:700},
+        //     {tooltips: 'de R$700 a R$1000',minimo: 700,maximo:1000},
+        //     {tooltips: 'R$1000 ou mais',minimo: 1000,maximo:99999}
+    
+        // ]
+        // for(info in faixa){
+        //     console.log(info,faixa[info])
+        // };
+    // Segunda Opção (Factory Function)
+        //     function faixaDePreco(tooltips,minimo,maximo){
+        //         return{
+        //             tooltips,
+        //             minimo,
+        //             maximo
+        //         };
+        //     };
+        //    let faixa2 = [
+        //     faixaDePreco('Até R$700',0,700),
+        //     faixaDePreco('de R$700 a R$1000',700,1000),
+        //     faixaDePreco('R$1000 ou mais',1000,99999)
+        //    ];
+        //     console.log(faixa2);
+    // Terceira Opção (Constructor Function)
+        // function Faixa(tooltips,minimo,maximo){
+        //     this.tooltips = tooltips,
+        //     this.minimo = minimo,
+        //     this.maximo = maximo
+        // };
+        // let faixa3 = [
+        //     new Faixa('Até R$700',0,700),
+        //     new Faixa('de R$700 a R$1000',700,1000),
+        //     new Faixa('R$1000 ou mais',1000,99999)
+        // ];
+        // console.log(faixa3);
+// 20 - ARRAYS
+    // Add Novos Elementos
+    // Encontrar Elementos
+    // Remover Elementos
+    // Dividir Elementos
+    // Dividir Arrays
+    // Combinar Arrays
