@@ -737,3 +737,157 @@ console.log('Teste')
     // Dividir Elementos
     // Dividir Arrays
     // Combinar Arrays
+//20.1 Adicionando elementos em um Array
+    // const numeros = [1,2,3];
+    //     // Add no inicio
+    //         numeros.unshift(0); - 'Adicionando um elemento no começo'
+    //         console.log(numeros);
+    //     // Add no meio
+    //         numeros.splice(2,0,'a'); - 'Primeiro elemento é a posição que deseja inserir um no elemento (2)'
+    //                                    'Segundo elemento é quantos elementos seriam substituidos/deletados apos o novo valor inserido(0)'
+    //                                    'Terceiro elemento é o que valor/elemento que deseja atribuir'
+    //         console.log(numeros);
+    //     // Add no final
+    //         numeros.push('ultimo'); - 'Adicionando um elemento no final'
+    //         console.log(numeros);
+//20.2 Encontrando elementos dentro de um array (Tipo Primitivo)
+    // const numeros = [1,2,3,4];
+    // console.log(numeros.indexOf(3)); - 'Encontra um elemento dentro de um array e diz qual o seu indice'
+    // // Outra situação
+    // console.log(numeros.indexOf(5)); - 'O valor não (5) não foi encontrado, logo foi respondido com -1'
+    // // Situação 2
+    // const numeros = [1,2,3,4];
+    // console.log(numeros.indexOf('1')); - 'Valor não foi encontrado, pq a busca pelo valor também verifica a propriedade, se é um numero ou não e etc.'
+    // // Encontrando o ultimo elemento alvo
+    // const numeros = [1,2,3,4,1,5];
+    // console.log(numeros.lastIndexOf(1)); - 'Vai procurar e encontrar o ultimo valor alvo, caso possua mais de um em uma array'
+    // // Numero existe ou não
+    // const numeros = [1,2,3,4];
+    // console.log(numeros.indexOf(2) !==-1); - 'Maneira antiga e mais complicada'
+    // // Maneira mais facil e atualizada
+    // console.log(numeros.includes(2));
+//20.3 Encontrando elementos dentro de um array do Tipos Referência
+    // const marcas = [
+    //     {id: 1, nome: 'A'},
+    //     {id: 2, nome: 'B'}
+    // ];
+    // console.log(marcas.find(function(marca){
+    //     return marca.nome === 'A';
+    // }));
+// Arrow Functions (Funções de seta) - Forma mais simplificada de encontrat um elemento dentro de um array do tipo referência
+    // const comment = [
+    //     {user: 1, msg: 'Oi'},
+    //     {user: 2, msg: 'Olá'}
+    // ];
+    // console.log(comment.find((message) => message.msg === 'Olá' )); - 'Funciona apenas se houver apenas um elemento dentro do (function) [message]'
+// 20.4 - Removendo elementos dentro de um array
+    // const numeros = [2,2,3,4];
+    // // Inicio - Removendo o primeiro elemento
+    // const primeiro = numeros.shift(); - 'constante primeiro foi utilizada para mostrar o numero que foi removido no console'
+    // console.log(primeiro); - 'numero removido no console'
+    // console.log(numeros);
+    // // Meio
+    // const meio = numeros.splice(3,1);
+    // console.log(meio);
+    // console.log(numeros);
+    // // Final - Removendo último elemento
+    // const ultimo = numeros.pop();
+    // console.log(ultimo);
+    // console.log(numeros);
+// 20.5 - Esvaziando um array
+    // //Solução 1 - 'Apaga apenas as referências do array (numeros) e não de todos'
+    // let numeros = [1,2,3,4,5,6];
+    // let outros = numeros;
+    // numeros = [];
+    // console.log(numeros); - 'Apaga apenas as referências do array (numeros) e não de todos'
+    // console.log(outros);
+
+    // //Solução 2 - 'Apaga a referência de todos os arrays' (MAIS RECOMENDADO E LIMPO)
+    // let numeros = [1,2,3,4,5,6];
+    // let outros = numeros;
+    // numeros.length = 0;
+    // console.log(numeros);
+    // console.log(outros);
+
+    // // Solução 3 - Utilizando o splice
+    // let numeros = [1,2,3,4,5,6];
+    // let outros = numeros;
+    // numeros.splice(0,numeros.length);
+    // console.log(numeros);
+    // console.log(outros);
+//20.6 - Combinando e Dividindo Arrays 
+    // const primeiro = [1,2,3,4];
+    // const segundo = [5,6,7,8];
+    // //COMBINAR - Escolhe o array base + o array que deseja combinar
+    // const combinado = primeiro.concat(segundo);
+    // console.log(combinado);
+    // //DIVIDIR - Indice onde vai comecar a divisão + limite
+    // const dividir = combinado.slice(1); - 'Se não for colocado um limite, dividirá tudo após o indice'
+    // console.log(dividir);
+    // //DIVIDIR - (COM LIMITE
+    // const dividir = combinado.slice(1,6); - 'Começa no indice indicado e termina uma posição antes do indice limite'
+    // console.log(dividir);
+// ATENÇÃO COM ARRAYS DE OBJETOS:
+    // const primeiro = [{id:1}];
+    // const segundo = [5,6,7,8];
+
+    // primeiro[0].id = 10; - 'ALTERA O VALOR EM TODAS AS REFERÊNCIAS'
+    // const combinar = primeiro.concat(segundo);
+    // console.log(combinar);
+
+    // const clonar = combinar.slice();
+    // console.log(clonar);
+// 20.7 Operador Spread - NOVA FORMA DE CLONAR/COMBINAR
+    // const primeiro = [1,2,3,4];
+    // const segundo = [5,6,7,8];
+    // //COMBINAR
+    // const combinado = [...primeiro,...segundo];
+    // console.log(combinado);
+    // //ADICIONANDO COM SPREAD
+    // const add = [...primeiro,'TO NO MEIO',...segundo,'TO NO FIM'];
+    // console.log(add);
+    // //CLONANDO COM SPREAD
+    // const clone = [...primeiro];
+    // console.log(clone);
+// 20.8 fotEach - Iterando um Array
+    // // Antiga Maneira
+    // const numeros = [1,2,3,4,5];
+    // for(numero of numeros)
+    //     console.log(numero);
+    // // Maneira forEach
+    // const numeros = [1,2,3,4,5,6];
+    // numeros.forEach((numero,indice) => console.log(numero,indice));
+    // const numerosAoContrario = [9,8,7,6,5];
+    // numerosAoContrario.forEach((numero,indice) => console.log(numero,indice));
+// 20.9 join - Juntando Arrays
+    // const numeros = [1,2,3,4,5];
+    // const combinado = numeros.join('.');
+    // console.log(combinado);
+    // const numeros2 = [1,2,3,4,5];
+    // const combinado2 = numeros2.join('-');
+    // console.log(combinado2);
+    // const numeros3 = [1,2,3,4,5];
+    // const combinado3 = numeros3.join(' ');
+    // console.log(combinado3);
+    
+    // // SEPARAR - SPLIT
+    // const frase = 'Bom Dia, Meu Nobre';
+    // const separado = frase.split(' ');
+    // console.log(separado);
+
+    // // Slug - URL de SITES
+    // const frase = 'Bom Dia, Meu Nobre';
+    // const separado = frase.split(' ');
+    // console.log(separado);
+    // separado.splice(1,1,'Dia');
+    // console.log(separado.join('-'));
+// INPUT no Console
+    // let idade = prompt('Qual sua idade ?')
+    // if(idade < 18){
+    // alert('Você é menor de idade!')
+    // }
+// DOM 
+    // Manipulação do HTML usando o JavaScript
+    // document.getElementById('campoDeComentario').innerText = 'Esse é o meu com';
+    // document.getElementById('TESTE').innerText = 'Testzão';
+    // document.getElementById('TESTE').innerText = 'TESTE' - [NO CONSOLE[FORMA QUE CONSEGUI]]
