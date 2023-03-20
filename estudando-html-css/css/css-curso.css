@@ -1,0 +1,466 @@
+/* Estudo CSS */
+/* 0 - (*) - "*" é um coringa que passa características para todos elementos de uma página */
+* {
+    box-sizing: border-box;
+}
+
+/* 1 - CSS inline(na linha de codigo do html)
+   CSS interno(dentro da tag head do html)
+   CSS externo(dentro de um arquivo .css)
+   Utilizam bastante de arquivos isolados para modificar/dar estilo a algo unico em todas as páginas
+   Ex: Estilizar a fonte para ser igual em todas as páginas ex:(font-style.css)*/
+/* 2 - Seletores e Classes */
+/* Funções Pré-definidas */
+/* Adicionar classe no HTML com PADRÕES pré-definido */
+/* Ex: <h1 class="vermelho centro"*/
+.vermelho {
+    color: red;
+}
+
+.centro {
+    text-align: center;
+}
+
+/* h1,
+p {
+    color: blue;
+} */
+
+/* 3 - Background */
+.background {
+    height: 100px;
+    width: 100px;
+    /* background-color: black; */
+    /* background-image: url("img/kisspng-cristiano-ronaldo-real-madrid-c-f-fifa-18-uefa-ch-5ae85aebe7b686.6997111915251770679491-removebg-preview.png"); */
+    background-size: contain;
+    /*(background-repeat: no-repeat;)
+NÃO REPETIR A IMAGEM, CASO ELA SE SOBREPONHA*/
+    /* background-repeat: no-repeat; */
+    /* (background:) CÓDIGO "UNIVERSAL" */
+    background: url("img/kisspng-cristiano-ronaldo-real-madrid-c-f-fifa-18-uefa-ch-5ae85aebe7b686.6997111915251770679491-removebg-preview.png") black no-repeat;
+}
+
+.background:hover {
+    opacity: 0.5;
+}
+
+/* 4 - Border */
+.border {
+    color: darkmagenta;
+    border: 5px solid black;
+    border-radius: 30px;
+    text-align: center;
+    border-top: 5px solid red;
+    border-bottom: 5px solid red;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+/* 5 - Margin */
+.border {
+    /* Funciona em 'sentido horário(Primeiro valor é a parte de cima[Onde o ponteiro começa a girar]
+    depois vai para a direita, passa para baixo e depois chega na esquerda) igual um relógio */
+    margin: 20px 10px 20px 10px;
+}
+
+/* 6 - Padding */
+.border {
+    /* Funciona em 'sentido horário(Primeiro valor é a parte de cima[Onde o ponteiro começa a girar]
+    depois vai para a direita, passa para baixo e depois chega na esquerda) igual um relógio */
+    padding: 20px 10px 20px 10px;
+}
+
+.botaos {
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    background: black;
+    border: 5px solid black;
+    border-radius: 30px;
+    box-sizing: border-box;
+}
+
+.botaos:hover {
+    color: black;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    background: white;
+    border: 5px solid white;
+    border-radius: 30px;
+    box-sizing: border-box;
+}
+
+/* 7 - Text */
+.Text {
+    color: black;
+    text-align: justify;
+    /* Primeira letra maiuscula de cada palavra(capitalize)*/
+    text-transform: capitalize;
+    /* Espaçamento para parágrafo(indent) */
+    text-indent: 30px;
+    /* Espaçamento entre as letras(letter-spacing)*/
+    letter-spacing: 5px;
+    /* Espaçamento entre linhas */
+    line-height: 5px;
+    /* Espaçamento entre palavras */
+    word-spacing: 5px;
+}
+
+/* 8 - Fonts */
+/* Utilizar o Google Fonts para poder importar fontes externas, copiando o código @import e colocar antes do body
+e então colocar seu nome com o (text-family) [SEM DIREITOS AUTORAIS]*/
+
+.Fonts {
+    font-weight: bold;
+    font-style: normal;
+    font-size: medium;
+    font-family: sans-serif;
+}
+
+/* 9 - Variações/Estilização de Links */
+a.botao1 {
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    background: black;
+    padding: 3px 60px;
+    border: 5px solid black;
+    border-radius: 30px;
+    box-sizing: border-box;
+    box-shadow: 0 0 15px purple;
+}
+
+a.botao1:hover {
+    color: black;
+    padding: 6px 63px;
+    background: white;
+    cursor: default;
+    box-shadow: 0 0 30px rgb(112, 0, 112);
+}
+
+.botao2 {
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    background: black;
+    padding: 1px 20px;
+    border: 5px solid black;
+    border-radius: 30px;
+    box-sizing: border-box;
+}
+
+a.botao2:hover {
+    padding: 3px 23px;
+    font-size: 15px;
+    cursor: default;
+    border: 5px solid red;
+}
+
+/* 10 - Display */
+/* 10.0 - Algumas Tags possuem seus Display já definidos como padrão  */
+/* 10.1 - inline junta todos os elementos em uma linha só, com o tamanho de acordo com o conteúdo, assim,
+não respeitando os comandos de tamanho */
+/* 10.2 - block pega o espaço da página inteira ou o espaço completo dentro de uma seção/div e assim,
+respeitando os comandos de tamanhos */
+/* 10.3 - inline-block é o meio termo dos dois deixando o conteúdo em linha(alinhado), respeitando
+os comandos de tamanho */
+/* 10.4 - Display:none é usado em conjunto com o JavaScript fazendo um item/algo desaparecer ou aparecer 
+com alguma ação/função do JavaScript*/
+
+/* 11 - max-width */
+/* Determina um tamanho maximo da tela, assim se ajustando, como exemplo os celulares, assim,
+se você colocar um tamanho superior a sua tela, ele irá se adaptar e prencher ela toda,
+se for um tamanho menor que sua tela ele irá aparecer normalmente com seu tamanho escolhido. */
+
+/* 12 - Position */
+/* ATENÇÃO: left: 20px; = deslocamento da esquerda, ou seja, o item se deslocou 20 pixeis da esquerda em
+direção a direita */
+/* 12.0 - Todo elemento como div,p,h1 e outros possuem como padrão o tipo de posição estatica(static). */
+/* 12.1 - position:relative é configurada para se adaptar ao posicionamento que você escolher de acordo com
+seu posicionamento original  */
+/* 12.2 - z-index:[numero] tem como objetivo informar qual objeto/item fica na frente ou atrás de outro
+em relação ao position:relative, por ex: se um item x tem 2 de z-index(usando o posit:rel) e o item y tem
+3 de z-index, então o item y ficará na frente[z de z-index se refere ao eixo z] */
+/* 12.3 - position:fixed é uma configuração que mantem um elemento fixo em uma posição na tela, que mesmo
+usando a barra de rolagem para baixo ou para os lados o item se manterá na mesma posição, acompanhando a tela */
+/* 12.4 - position:absolute é uma configuração para alterar a posição de um elemento em relação ao seu "Pai",
+por exemplo o Body que é a tag que a maioria das outras estão dentro dela.(lembrando: se outro elemento for
+usado como pai, como a div por exemplo, ela não pode ser configurada como position:static, se não o comando
+absolute procurará outro elemento "atrás" dessa div para considerar como pai, assim o posicionamento será em
+relação a 'esse' pai. */
+/* 12.5 - position:sticky é uma configuração "pegajosa", ou seja, o elemento permanece na posição e caso saia do campo de visão de sua posição original ele segue o elemento "pai" até seu fim*/
+
+/* 13 - overflow  */
+/* Determina o que será feito com o conteúdo que ultrapasse o limite de um "conteiner/bloco/pai,
+o padrão para os elementos é overflow:visible */
+/* 13.0 - overflow:visible - deixa o conteúdo que o ultrapassou o elementou pai visivel, mesmo que o conteúdo 
+saia do alcance limite do elemento pai */
+/* 13.1 - overflow:scroll - adiciona uma barra de rolagem para que possa ver o conteúdo inteiro dentro de um
+elemento pai */
+/* 13.2 - overflow:hidden - esconde o conteúdo que ultrapasse o limite do elemento pai, assim não sendo 
+possível ver o conteúdo */
+/* 13.2 - overflow:auto - deixa como automática a tomada de decisão se será necessário ou não uma barra
+de rolagem para mostrar todo o conteúdo presente dentro do elemento pai */
+/* 13.3 - overflow-y: & overflow-x: - são comandos para especificar uma configuração para apenas uma direção da 
+tela, ou seja, se deseja remover a barra de scroll/rolagem somente da horizontal ou somente da vertical */
+
+/* 14 - float */
+/* 14.0 - Flotoar - É um elemento que faz um item/conteúdo "flotoar" de seu elemento pai, ou seja, se desprender
+dele, assim dependendo das circunstâncias, alterando o tamanho do elemento pai */
+/* 14.1 - overflow:auto no float - Se utilizar o comando overflow:auto para corrigir as extra-polações de um 
+elemento dentro de seu elemento pai, o conteúdo continua flotoando,mas o tamanho do elemento pai permanece de
+arco com o que foi configurado ou com o tamanho do conteúdo flotoado */
+/* 14.2 - float:right & float:left - determina se o conteúdo irá flutuar para esquerda ou para direita */
+/* 14.3 - clear:both - comando utilizado para ignora a flotoação do conteúdo, assim voltando a agir como se
+o conteúdo não estivesse flotoando, começando o conteúdo em outra linha por exemplo. */
+/* 14.4 Exemplos: */
+.flotoandoPai {
+    width: 700px;
+    height: 400px;
+    border: 1px solid black;
+    overflow: auto;
+}
+
+#flotoado {
+    width: 200px;
+    height: 200px;
+    background: darkblue;
+    float: left;
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
+
+.antifloat {
+    clear: both;
+}
+
+/* Diagramação: Destribuir os elementos gráficos no espaço limitado da página de forma coerente e esticamente
+bonita. */
+/* 14.5 - Exemplo com menu: */
+ul {
+    background-color: black;
+
+    overflow: hidden;
+}
+
+li.loginLink {
+    float: right;
+}
+
+li.simpleMenu {
+    float: left;
+    list-style-type: none;
+}
+
+li.simpleMenu a {
+    padding: 14px 16px;
+    text-decoration: none;
+    color: white;
+    text-align: center;
+}
+
+li.simpleMenu a:hover {
+    background-color: rgb(255, 0, 0);
+}
+
+li.loginLink a:hover {
+    background-color: blue;
+}
+
+/* Opacity - Alterar opacidade, pode ser utilizada para mudar a opacidade de botões e imagens com o :hover */
+/* 15 - Dropdown */
+/* Dropdown são as opções de menu quando se passa o mouse en cima*/
+/* Exemplo: */
+ul.backgroundMenu {
+    background: black;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+.dropdown-content {
+    width: 150px;
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    display: none;
+}
+
+.dropdown-content a {
+    color: black;
+    display: block;
+    text-align: left;
+    border: 1px solid rgb(207, 207, 207);
+}
+
+/* li PARA DROPDOWN */
+li.dropdown {
+    display: inline-block;
+}
+
+/* a PARA DROPDOWN */
+li.simpleMenu a,
+.dropbtn {
+    display: inline-block;
+    color: white;
+    padding: 20px;
+    text-decoration: none;
+    text-align: center;
+}
+
+li a:hover,
+.dropdown:hover .dropbtn {
+    background: red;
+}
+
+li.dropdown a {
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    padding: 20px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+body {
+    padding-bottom: 300px;
+}
+
+/* 16 - Especificidade do CSS (HIERARQUIA DAS TAGS/CLASSES -  */
+/* 1 - id */
+/* 2 - tag.class */
+/* 3 - class */
+/* 4 - tag */
+
+/* 17 - !Important */
+/* Basicamente ignora a hierarquia de escificidade e força o comando em tags inferiores */
+/* mas se for usado por duas tags, a tag com a maior hierarquia terá a prioridade */
+
+/* 18 - gradient/efeito degradê */
+.gradientLinear {
+    background-color: black;
+    width: 100%;
+    height: 200px;
+    background-image: linear-gradient(45deg, red, green, black, white, blue, purple, yellow, rgb(255, 0, 43));
+}
+
+.gradientRadial {
+    background-color: black;
+    width: 200px;
+    height: 200px;
+    background-image: radial-gradient(red 50%, green 10%, black, white, blue, purple, yellow, rgb(255, 0, 43));
+}
+
+/* 19 - Box-Shadow e Text-Shadow */
+/* TEXT-SHADOW */
+.text-shadow {
+    text-shadow: 2px 2px red;
+}
+
+.text-shadow2 {
+    text-shadow: 2px 2px 5px purple;
+}
+
+.text-shadow3 {
+    text-shadow: 0px 0px 5px purple, 5px 5px 7px black;
+}
+
+/* BOX-SHADOW */
+.box-shadow {
+    background-color: black;
+    width: 200px;
+    height: 200px;
+    box-shadow: 0 0 20px purple;
+}
+
+/* Com isso é possivel fazer os efeitos de card e neon nos botões */
+
+/* 20 - Efeitos de Texto */
+.boxReduzido {
+    text-align: center;
+    width: 200px;
+    height: auto;
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+}
+
+.boxReduzido img {
+    width: 100%;
+    height: 100px;
+}
+
+.reduzido {
+    /* text-overflor: ellipsis - Informa com (...) que o texto possui mais conteúdo que não foi mostrado[continuação] */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 5px;
+}
+
+.boxReduzido:hover .reduzido {
+    white-space: normal;
+}
+
+/* 21 - MEDIA QUERIES */
+/* Media Queries é basicamente a adaptação do conteúdo para dispositivos com diferentes tipos de tamanhos de 
+tela, alterando a responsividade, podendo mudar o local de uma classe/div para melhor se adaptar à um especifico 
+dispositivo, ou até mesmo retirando funções complexas para alguns dispositivo */
+
+/* conteúdo a ser alterado em especifico tamanho de tela fica dentro das { } */
+
+/* Smartphones (600px para baixo) */
+/* @media only screen and (max-width: 600px) {...} */
+
+/* Dispositivos um pouco maiores, mas ainda pequenos (Pequenos Tablets e Smartphones + largos, 600px para cima) */
+/* @media only screen and (min-width: 600px) {...} */
+
+/*Dispostivos Médios (Tablets deitados, 768px para cima) */
+/* @media only screen and (min-width: 768px) {...} */
+
+/* Dispostivos Largos (laptops/desktops, 992px para cima) */
+/* @media only screen and (min-width: 992px) {...} */
+
+/* Super Largos (Telas maiores laptops, desktops e até TVs, 1200px para cima) */
+/* @media only screen and (min-width: 1200px) {...} */
+
+/* 22 - FlexBox */
+/* Nova mecânica substituta direta e mais ajustável do display block/inline e inline-block */
+.flex-pai {
+    background-color: blue;
+    display: flex;
+    /* flex-direction - pode determinar se um elemento estará em coluna ou em linha e outros */
+    flex-direction: row;
+    /* flex-wrap - o padrão é o nowrap que basicamente o elemento acaba ultrapassando o limite da div pai
+    e acabando "esticando" a tela, agora o flex-wrap:wrap se adapta ao limite do elemento pai, criando assim, 
+    uma nova linha ou coluna para se adaptar */
+    flex-wrap: wrap;
+    /* flex-flow - basicamente consegue colocar várias características de um elemento flex em apenas um comando */
+    flex-flow: row wrap;
+    /* justify-content - é usado para alinhar o conteúdo de forma horizontal dentro de um elemento pai, assim,
+    tendo vários comandos secundários para configurar */
+    justify-content: center;
+    /* align-content - exatamente a mesma coisa do justify-content só que no eixo vertical */
+    align-content: center;
+    /* align-items - basicamente a mesma coisa do align-content só que sua configuração é referente ao eixo y
+    o eixo vertical e referente a um item individual do bloco */
+    align-items: center;
+    /* flex-grow - usado na div filho para adaptar o crescimento de um item dentro de um conjunto flex, inserindo 
+    um número para estipular o índice de crescimento, ou seja, o quão um item vai crescer de acordo com o tamanho
+    da tela */
+    flex-grow: 3;
+
+
+}
+
+.flex-pai div {
+    background-color: white;
+    padding: 30px;
+    border: 1px solid black;
+    text-align: center;
+}

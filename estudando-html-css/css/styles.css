@@ -1,0 +1,177 @@
+/* Integração inicial */
+h1 {
+    color: Purple;
+}
+/*Comentários com CSS*/
+
+/*id (#)*/
+
+#Goku  {
+    color:rgb(0, 255, 64);
+}
+/*Classes (.) */
+
+.Paragraph {
+    color:red;
+}
+/*Background*/
+.fundo {
+background-color:black;
+color:white;
+font-size: 25px;
+}
+/*Dois elementos, uma regra*/
+p.txt {
+    color:purple;
+}
+
+/* Background image*/
+
+.exe {
+    font-size: 30px;
+    background-image: url(../img/astronauto\ suave.jfif);
+    padding: 67px;
+}
+/* Altura e Largura*/
+
+#width-height {
+ background-color: black;
+ width: 200px;
+ height: 100px;
+ 
+
+ }
+ .blackbox {
+    color:white;
+ }
+ /*Padding*/
+ #padding {
+    background-color:red;
+    padding: 25px;
+ }
+ /*Margin*/
+ #abc {
+    background-color: brown;
+    padding: 20px;
+    margin: 30px;
+    font-size: 20px;
+ }
+/*Border*/
+#borda {
+    color: white;
+    background-color: blue;
+    width: 100px;
+    height: 100px;
+    border: 3px solid black;
+}
+/*Raio da Borda*/
+#border-radius {
+    border: 3px dashed red;
+    background-color: black;
+    height: 100px;
+    width: 100px;
+    color: blueviolet;
+    border-radius: 5px;
+}
+#alinhamento {
+    text-align: center;
+}
+#underline {
+    text-align: center;
+    text-decoration: underline;
+}
+#linha {
+    text-align: center;
+    text-decoration: rgb(255, 0, 0) underline;
+}
+#none-underline {
+    text-decoration: none;
+}
+/*transform*/
+#upper {
+    text-transform: lowercase;
+}
+#lower {
+    text-transform: uppercase;
+}
+/*alterção de fonte*/
+#fontzise {
+    font-size: 30px;
+}
+#serif{
+    font-family: Georgia;
+}
+#sans-serif{
+    font-family: helvetica;
+}
+#cursive{
+    font-family: cursive;
+}
+/*display deixando alinhado ou desalinhado(Block)*/
+.inline{
+    background-color: red;
+    width: 100px;
+    height: 100px;
+    margin: 5px;
+}
+.ininline{
+    background-color: blue;
+    width: 100px;
+    height: 100px;
+    margin: 5px;
+    display: inline-block;
+}
+#sou-invisivel {
+    display: none;
+}
+/*position*/
+#relative, #fixed,#absolute {
+    height: 100px;
+    width: 100px;
+    margin: 1px;
+}
+#relative{
+    background-color: red;
+    text-align: center;
+    top: 10px;
+    right: 50px;
+    position: relative;
+}
+#absolute{
+    background-color: blue;
+    top: 10px;
+    right: 600px;
+    text-align: center;
+    position: absolute;
+}
+#fixed{
+    background-color: green;
+    text-align: center;
+    top: 10px;
+    right: 50px;
+    position: fixed;
+}
+/*Relative com absolute */
+#relative1{
+    width: 300px;
+    height: 300px;
+    border: 5px solid red;
+    position: relative;
+}
+#absolute1{
+width: 100px;
+height: 100px;
+background-color: rgb(146, 5, 5);
+position: absolute;
+bottom: 0px;
+right: 0px;
+}
+#absolute2{
+    width: 100px;
+    height: 100px;
+    background-color: black;
+    position: relative;
+    top: 20px;
+    left: 10px;
+
+}
