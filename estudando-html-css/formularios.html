@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulários</title>
+</head>
+
+<body>
+    <h1>Formulários</h1>
+    <form action="" method="">
+        <!-- LEGENDA NOME -->
+        <label for="campo_nome">Nome:</label>
+        <!-- INPUT TYPE TEXT -->
+        <input type="text" name="" id="campo_nome" placeholder="Digite seu nome" required>
+        <!-- LEGENDA SOBRENOME -->
+        <label for="campo_sobrenome">Sobrenome:</label>
+        <!-- INPUT TYPE TEXT -->
+        <input type="text" name="" id="campo_sobrenome" placeholder="Digite seu sobrenome" required>
+        <br><br>
+        <!-- LEGENDA EMAIL -->
+        <label for="campo_email">Email:</label>
+        <!-- INPUT TYPE EMAIL -->
+        <input type="email" name="" id="campo_email" placeholder="Digite um email" required>
+        <br><br>
+        <!-- LEGENDA SENHA -->
+        <label for="campo_senha">Senha:</label>
+        <!-- INPUT TYPE SENHA -->
+        <input type="password" name="" id="campo_senha" placeholder="Digite uma senha" required>
+        <br><br>
+
+        <h2>Área da Profissão</h2>
+        <!-- INPUT TYPE RADIO -->
+        <input type="radio" name="areaProfissao" id="backend" value="back-end">
+        <!-- LEGENDA BACK-END -->
+        <label for="backend">Back-End</label>
+        <br><br>
+        <!-- INPUT TYPE RADIO -->
+        <input type="radio" name="areaProfissao" id="frontend" value="front-end">
+        <!-- LEGENDA FRONT-END -->
+        <label for="frontend">Front-End</label>
+        <br><br>
+        <!-- INPUT TYPE RADIO -->
+        <input type="radio" name="areaProfissao" id="fullstack" value="full-stack">
+        <!-- LEGENDA FULL-STACK -->
+        <label for="fullstack">Full-Stack</label>
+        <br><br>
+        <!-- CHECKBOX -->
+        <h2>Linguagens:</h2>
+        <!-- HTML -->
+        <input type="checkbox" name="_HTML" id="_HTML" value="HTML">
+        <label for="_HTML">HTML</label>
+        <br><br>
+        <!-- CSS -->
+        <input type="checkbox" name="_CSS" id="_CSS" value="CSS">
+        <label for="_CSS">CSS</label>
+        <br><br>
+        <!-- JavaScript -->
+        <input type="checkbox" name="_JavaScript" id="_JavaScript" value="JavaScript">
+        <label for="_JavaScript">JavaScript</label>
+        <br><br>
+        <!-- React -->
+        <input type="checkbox" name="_React" id="_React" value="React">
+        <label for="_React">React</label>
+        <br><br>
+        <!-- PHP -->
+        <input type="checkbox" name="_PHP" id="_PHP" value="PHP">
+        <label for="_PHP">PHP</label>
+        <br><br>
+        <!-- NODEJS -->
+        <input type="checkbox" name="_NODEJS" id="_NODEJS" value="NODEJS">
+        <label for="_NODEJS">NODEJS</label>
+        <br><br>
+
+        <!-- SELECT E OPTION -->
+        <h2>Nivel como Profissional</h2>
+        <select name="nivel" id="" required>
+            <option selected disabled value="">Selecione uma opção</option>
+            <option value="junior">Junior</option>
+            <option value="plenor">Plenor</option>
+            <option value="Sênior">Sênior</option>
+        </select>
+        <br><br>
+        <!-- TextArea -->
+        <h2>Comentários</h2>
+        <textarea name="comentarios" id="" cols="60" rows="10" placeholder="Digite seu comentario..."></textarea>
+        <br><br>
+        <!-- INPUT SUBMIT -->
+        <input type="submit" value="Enviar Formulário">
+    </form>
+    <br><br>
+    <button><a href="index.html">Voltar para a página principal</a>
+    </button>
+</body>
+
+</html>

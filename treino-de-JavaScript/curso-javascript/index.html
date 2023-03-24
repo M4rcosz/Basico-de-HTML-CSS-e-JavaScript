@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Curso JavaScript</title>
+</head>
+
+<body>
+    <h1>Aprendendo JavaScript</h1>
+    <p id="text"></p>
+    <p id="text1"></p>
+    <button onclick="eventoClick()" ondblclick="eventoDblClick()">Clique Aqui!</button> <br> <br>
+    <input type="text" name="" id="campoTexto" onfocus="limparTexto()" onblur="retornarTexto()" onchange="mudou()"
+        value="Digite alguma coisa aqui.">
+    <div id="onMouseOver" onmouseout="eventoVoltarCor()" onmousemove="eventoOnMouseMove()"
+        onmouseover="eventoOnMouseOver()"></div>
+    <select name="" id="" onchange="mudou()">
+        <option value="valor1">Valor1</option>
+        <option value="valor2">Valor2</option>
+        <option value="valor3">Valor3</option>
+        <option value="valor4">Valor4</option>
+        <option value="valor5">Valor5</option>
+    </select>
+    <br><br>
+    <input type="text" name="" id="onkeydown" placeholder="onkeydown" onkeydown="onKeyDown()"> <br><br>
+    <input type="text" name="" id="onkeypress" placeholder="onkeypress" onkeypress="onKeyPress()"><br><br>
+    <input type="text" name="" id="onkeyup" placeholder="onkeyup" onkeyup="onKeyUp()">
+    <script src="js/curso.js"></script>
+</body>
+
+</html>
