@@ -28,3 +28,31 @@
     background-color: purple !important;
     border: solid forestgreen !important;
 }
+
+.boxEl {
+    width: 300px;
+    border: 3px solid #333;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    margin-right: 10px;
+    padding: 5px;
+}
+
+.mainBox {
+    display: flex;
+    justify-content: center;
+}
+
+.btn {
+    width: 150px;
+    height: 40px;
+    background-color: #025;
+    border-radius: 10px;
+    cursor: pointer;
+    color: white;
+    margin-top: 10px;
+    border: 2px solid black;
+}

@@ -1,5 +1,13 @@
-// 1 - REST (...) - rest é um parâmetro que informa uma quantidade indefinida de valores.
+// Botão página de exercícios
+const botaoExercicios = document.createElement("button")
+botaoExercicios.setAttribute("class", "btn")
+botaoExercicios.innerHTML = "Botão para Página de Exercícios"
+document.querySelector("#botaoPaginaExercicios").appendChild(botaoExercicios)
 
+botaoExercicios.addEventListener("click", () => {
+    window.location = "./cfb-cursos_js-exercicios_praticos/index.html"
+})
+// 1 - REST (...) - rest é um parâmetro que informa uma quantidade indefinida de valores.
 // 1.1 - usando for
 // CODE:
 // function soma(...valores) {
@@ -355,5 +363,151 @@
 //         console.log(el.innerHTML + " foi clicado")
 //     })
 // })
+
+// 11 - stopPropagation - utilizado para parar uma propagação de um evento, ou seja, quando um evento de click por exemplo foi adicionado à uma div que contenha outros elementos, como
+// por exemplo outras divs, o evento ocorrerá mesmo se clicar nessas outras divs, e não apenas na div que foi adicionada o evento.
+
+// CODE:
+// const cointainer1 = document.querySelector("#box1")
+
+// cointainer1.addEventListener("click", (evt) => {
+//     let el = evt.target
+//     console.log(el + " clicou")
+// })
+
+// Executando o stop propagation para impedir o evento nos elementos dentro da div
+
+// CODE:
+
+// const elementosCurso0 = [...document.querySelectorAll(".cursos")]
+
+// elementosCurso0.map((e) => {
+//     e.addEventListener("click", (evt) => {
+//         evt.stopPropagation()
+//     })
+
+// })
+
+// 12 - relação entre elementos do DOM, parentes,child,siblings (aula 38 cfb cursos)[lembrando que childNodes citas os items que também não elementos HTML como o text por exemplo]
+
+// elementos filhos do box1 - HTMLCollection
+
+// CODE:
+// const box1 = document.querySelector("#box1")
+
+// console.log(box1.children)
+// console.log(box1.children[2])
+// console.log(box1.lastElementChild)
+
+// Verificando se um elemento possui filhos e respondendo no console com operador ternário
+
+// CODE:
+
+// const box1 = document.querySelector("#box1")
+// const elementosCurso = [...document.querySelectorAll(".cursos")]
+
+// console.log(box1.children.length > 0 ? "Possui filhos" : "NÂO possui filhos")
+// console.log(elementosCurso[0].children.length > 0 ? "Possui filhos" : "NÂO possui filhos")
+
+// console.log(elementosCurso[2])
+// console.log(elementosCurso[2].children.length > 0 ? "Possui filhos" : "NÂO possui filhos")
+
+// Alterando elementos especificos usando a children list
+
+// CODE:
+
+// const box1 = document.querySelector("#box1")
+
+// console.log(box1.children[2])
+// console.log(box1.children[2].innerHTML = "Alterei o child")
+
+// pegando elemento pai e depois o elemento pai do elemento pai(avô)
+
+// CODE:
+
+// const filho = document.querySelector("#neto")
+
+// console.log(filho.parentElement)
+// console.log(filho.parentElement.parentElement)
+// console.log(filho.parentElement.parentElement.children[4])
+
+// 13 - Criando elementos novos com JavaScript - creatElement & setAttribute
+
+// x.adotou(y) = appendChild
+
+// CODE:
+
+// const box2 = document.createElement("div")
+// const main = document.querySelector("#mainBox")
+// main.setAttribute("class", "mainBox")
+// box2.setAttribute("class", "boxEl")
+// main.appendChild(box2)
+
+// const novosCursos = ["novo Curso 1", "novo Curso 2", "novo Curso 3", "novo Curso 4", "novo Curso 5", "novo Curso 6", "novo Curso 7", "novo Curso 8", "End"]
+
+// novosCursos.map((e, i) => {
+//     const novoElemento = document.createElement("div")
+//     novoElemento.setAttribute("class", "cursos pacote2")
+//     novoElemento.setAttribute("id", "c" + (i + 7))
+//     novoElemento.innerHTML = e
+//     box2.appendChild(novoElemento)
+// })
+
+// 14 - removendo elementos do DOM - removeChild
+
+// x.desherdou(y) = removeChild
+
+// CODE:
+
+// const box2 = document.createElement("div")
+// const main = document.querySelector("#mainBox")
+// main.setAttribute("class", "mainBox")
+// box2.setAttribute("class", "boxEl")
+// main.appendChild(box2)
+
+// const novosCursos = ["novo Curso 1", "novo Curso 2", "novo Curso 3", "novo Curso 4", "novo Curso 5", "novo Curso 6", "novo Curso 7", "novo Curso 8", "End"]
+
+// novosCursos.map((e, i) => {
+//     const novoElemento = document.createElement("div")
+//     novoElemento.setAttribute("class", "cursos pacote2")
+//     novoElemento.setAttribute("id", "c" + (i + 7))
+//     novoElemento.innerHTML = e
+//     novoElemento.addEventListener("click", (evt) => {
+//         box2.removeChild(evt.target)
+//     })
+//     box2.appendChild(novoElemento)
+// })
+
+// 15 - filter - filtrar elementos de um array, assim criando um novo array com os elementos filtrados
+
+// CODE:
+
+// const idades = [10, 17, 15, 22, 31, 11, 90, 88, 47, 13, 18]
+
+// const maior = idades.filter((valor, indice, array) => {
+//     let idadeMaior = valor >= 18
+//     return idadeMaior
+// })
+// const menor = idades.filter((valor, indice, array) => {
+//     if (valor < 18)
+//         return valor
+// })
+
+// console.log(idades)
+// console.log(maior)
+// console.log(menor)
+
+// exercicio sobre filter - ir para a pagina de exercicios
+
+// CODE:
+// EX da pag de exercicios:(filtrando items selecionados do radio)
+
+// const todosRadios = [...document.querySelectorAll("input[type=radio]")]
+// let radioSelecionado = todosRadios.filter((ele, ind, arr) => {
+//     return ele.checked
+// })
+// radioSelecionado = radioSelecionado[0]
+
+// 16 - insertBefore - adicionar/adotar um novo item antes de outro [insertBefore(item1 antes do:, Item2)]
 
 
