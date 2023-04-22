@@ -508,6 +508,156 @@ botaoExercicios.addEventListener("click", () => {
 // })
 // radioSelecionado = radioSelecionado[0]
 
-// 16 - insertBefore - adicionar/adotar um novo item antes de outro [insertBefore(item1 antes do:, Item2)]
+// 16 - insertBefore - adicionar/adotar um novo item antes de outro [insertBefore(item1 antes do:, Item2)] - pag de exercicios filter
+
+// 17 - toggle - classList.toggle - permite alterar uma classe a adicionando ou removendo de acordo com uma ação ou função ordenada
+
+// CODE:
+// const item = [...document.querySelectorAll(".cursos")]
+
+// item.map((e) => {
+//     e.addEventListener("click", (evt) => {
+//         const el = evt.target
+//         el.classList.toggle("adicionarClasseComJavaScript")
+//     })
+// })
+
+// 18 - find - encontrar/procurar um numero dentro de um array e retonar true ou false se existe esse número dentro do array .find(e,i,a)
+
+// CODE:
+
+// const findExercicio = document.querySelector("#findExercicio")
+// const p_array = document.querySelector("#array")
+// const txt_pesquisar = document.querySelector("#txt_pesquisar")
+// const btnPesquisar = document.querySelector("#btnPesquisar")
+// const resultado = document.querySelector("#resultado")
+
+// findExercicio.style.display = "block"
+
+// const elementos_array = [10, 11, 12, 15, 17, 22, 78, 33, 66, 32, "html", "CSS", "JavaScript"]
+// p_array.innerHTML = "[" + elementos_array + "]"
+
+// btnPesquisar.addEventListener("click", (evt) => {
+//     resultado.innerHTML = "Valor não encontrado"
+
+//     let strings_array = [];
+//     let numbers_array = [];
+
+//     for (let i = 0; i < elementos_array.length; i++) {
+//         if (typeof elementos_array[i] === "string") {
+//             strings_array.push(elementos_array[i])
+//         }
+//         else if (typeof elementos_array[i] === "number") {
+//             numbers_array.push(elementos_array[i])
+//         }
+//     }
+//     if (!isNaN(txt_pesquisar.value)) {
+//         numbers_array.find((e, i) => {
+//             if (e == txt_pesquisar.value) {
+//                 resultado.innerHTML = "O valor encontrado foi " + e + " e foi encontrado na posição " + (1 + i)
+//             }
+//         })
+//     }
+//     else {
+//         strings_array.find((e, i) => {
+//             if (e.toLowerCase() == txt_pesquisar.value.toLowerCase()) {
+//                 resultado.innerHTML = "O valor encontrado foi " + e + " e foi encontrado na posição " + (numbers_array.length + (i + 1))
+//             }
+//         })
+//     }
+// })
+
+// 19 - every - verificar se todos os elementos possuem a especificação do return, e retornar true ou false se todos tiverem "OK" com essa especificação em comum .every(e,i,a)
+// return true se todos(every) elementos(e) for = [especificação]
+
+// CODE:
+
+// const findExercicio = document.querySelector("#findExercicio");
+// const p_array = document.querySelector("#array");
+// const txt_pesquisar = document.querySelector("#txt_pesquisar");
+// const btnPesquisar = document.querySelector("#btnPesquisar");
+// const resultado = document.querySelector("#resultado");
+// txt_pesquisar.style.display = "none";
+// btnPesquisar.innerHTML = "Verificar"
+// findExercicio.style.display = "block"
+
+// const elementos_array = [18, 20, 78, 3, 66, 32]
+// p_array.innerHTML = "[" + elementos_array + "]"
+
+// btnPesquisar.addEventListener("click", (evt) => {
+
+//     const ret = elementos_array.every((e, i) => {
+
+//         if (e < 18) {
+//             resultado.innerHTML = "Array não conforme na posição " + (i + 1)
+//         }
+//         return e >= 18
+//     })
+//     if (ret) {
+//         resultado.innerHTML = "OK"
+//     }
+
+// })
+
+// 20 - soma - verificar se pelo menos um elemento possue a especificação do return, e retornar true ou false se pelo menos um estiver "OK" com essa especificação .some(e,i,a)
+// return true se algum(some) elemento(e) for = [especificação]
+
+// CODE:
+
+// const findExercicio = document.querySelector("#findExercicio");
+// const p_array = document.querySelector("#array");
+// const txt_pesquisar = document.querySelector("#txt_pesquisar");
+// const btnPesquisar = document.querySelector("#btnPesquisar");
+// const resultado = document.querySelector("#resultado");
+// txt_pesquisar.style.display = "none";
+// btnPesquisar.innerHTML = "Verificar"
+// findExercicio.style.display = "block"
+
+// const elementos_array = [9, 20, 78, 33, 66, 32]
+// p_array.innerHTML = "[" + elementos_array + "]"
+
+// btnPesquisar.addEventListener("click", (evt) => {
+
+//     const ret = elementos_array.some((e, i) => {
+//         if (e > 18) {
+//             resultado.innerHTML = "Array não conforme"
+//         }
+//         return e <= 18
+//     })
+//     if (ret) {
+//         resultado.innerHTML = "OK"
+
+//     }
+
+// })
 
 
+// 21 - reduce - método para reduzir um array .reduce(elementoAnterior,elemento,indice,array)
+
+// CODE:
+
+// const findExercicio = document.querySelector("#findExercicio");
+// const p_array = document.querySelector("#array");
+// const txt_pesquisar = document.querySelector("#txt_pesquisar");
+// const btnPesquisar = document.querySelector("#btnPesquisar");
+// const resultado = document.querySelector("#resultado");
+// txt_pesquisar.style.display = "none";
+// btnPesquisar.innerHTML = "Reduzir"
+// findExercicio.style.display = "block"
+
+// const elementos_array = [1, 2, 3, 4, 5]
+// let anterior = []
+// let atual = []
+// let dobro = []
+// p_array.innerHTML = "[" + elementos_array + "]"
+
+// btnPesquisar.addEventListener("click", (evt) => {
+//     dobro.push(elementos_array[0] * 2)
+//     resultado.innerHTML = elementos_array.reduce((anteriorR, atualR, indiceR, arrayR) => {
+//         anterior.push(anteriorR)
+//         atual.push(atualR)
+//         dobro.push(atualR * 2)
+//         return anteriorR + atualR
+//     })
+//     resultado.innerHTML += "<br/>Valor anterior:" + anterior + "<br/>Valor atual:" + atual + "<br/>Valor dobro:" + dobro
+// })
