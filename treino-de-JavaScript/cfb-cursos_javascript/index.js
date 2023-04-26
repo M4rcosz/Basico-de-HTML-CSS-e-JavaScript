@@ -661,3 +661,252 @@ botaoExercicios.addEventListener("click", () => {
 //     })
 //     resultado.innerHTML += "<br/>Valor anterior:" + anterior + "<br/>Valor atual:" + atual + "<br/>Valor dobro:" + dobro
 // })
+
+// 22 - Iteradores - iteradores são funções que podem iterar, ou seja, podem passar por elemento em elemento até chegar á um final, (done: true)
+
+// Coleções iteráveis:
+// Arrays
+// Strings
+// Map
+// Sets
+
+// CODE:
+
+// const valores = [11, 12, 3, 4]
+
+// const it_valores = valores[Symbol.iterator]()
+
+// console.log(valores)
+// console.log(it_valores.next())
+// console.log(it_valores.next())
+// console.log(it_valores.next())
+// console.log(it_valores.next())
+// console.log(it_valores.next())
+
+// const texto = "Youtube"
+
+// const it_texto = texto[Symbol.iterator]()
+
+// console.log(texto)
+// console.log(it_texto.next())
+// console.log(it_texto.next())
+// console.log(it_texto.next())
+// console.log(it_texto.next())
+// console.log(it_texto.next())
+// console.log(it_texto.next())
+// console.log(it_texto.next())
+// console.log(it_texto.next())
+
+// 23 - Manipulação de Arrays
+
+// CODE:
+
+// const caixaA52 = document.querySelector("#A52")
+
+// caixaA52.style.display = "flex"
+
+// let cores = ["red", "blue", "green", "yellow"]
+// let arrayA52 = ["HTML", "CSS", "JavaScript", cores]
+
+// // arrayA52.push(["Python", "DataBase", "MySQL"])
+// // arrayA52.pop()
+// // arrayA52.unshift("First")
+// // arrayA52.shift()
+// // arrayA52.pop()
+// console.log(arrayA52)
+// console.log(arrayA52[3])
+// console.log(arrayA52[3][2])
+
+
+// arrayA52.map((e) => {
+//     const p = document.createElement("p")
+//     p.innerHTML = e
+//     caixaA52.appendChild(p)
+
+// })
+
+// 24 - Funções em Arrays
+
+// CODE:
+
+// const caixaA52 = document.querySelector("#A52")
+
+// caixaA52.style.display = "flex"
+
+// let valores = [4, 3, 2]
+
+// let op = [
+//     (val) => {
+//         let res = 0
+//         for (v of val) {
+//             res += v
+//         }
+//         return res
+//     },
+//     (val) => {
+//         let res = 1
+//         for (v of val) {
+//             res *= v
+//         }
+//         return res
+//     },
+//     (val) => {
+//         for (v of val) {
+//             console.log(v)
+//         }
+//     }
+// ]
+// const op1 = (op[0](valores))
+// const op2 = (op[1](valores))
+// const op3 = (op[2](valores))
+
+// let op_array = [op1, op2, valores]
+// op_array.map((e) => {
+//     const p = document.createElement("p")
+//     p.innerHTML = e
+//     caixaA52.appendChild(p)
+
+// })
+
+// Exercicio simples calculadora sobre funções em arrays - A53
+
+// CODE:
+// const titleA53 = document.createElement("h2")
+// titleA53.innerHTML = "Exercicio Calculadora"
+// const divA53 = document.createElement("div")
+// document.body.appendChild(titleA53)
+// document.body.appendChild(divA53)
+
+// titleA53.style = "position:relative;left:47.6%;cursor:default"
+// divA53.style = "border: 3px solid black; padding: 30px; display: flex; flex-direction: column; align-self:center;width: 100px; height:150px;position:relative;left:50%; justify-content:center;align-items:center"
+// document.body.style = "padding-bottom: 400px"
+
+// const calculadora = document.createElement("h3")
+// const valor1 = document.createElement("input")
+// const divButtons = document.createElement("div")
+// const valor2 = document.createElement("input")
+// const igual = document.createElement("p")
+// const resultado = document.createElement("p")
+// divA53.appendChild(calculadora)
+// divA53.appendChild(valor1)
+// divA53.appendChild(divButtons)
+// divA53.appendChild(valor2)
+// divA53.appendChild(igual)
+// divA53.appendChild(resultado)
+
+// calculadora.style = "margin-top:10px;cursor:default"
+// calculadora.innerHTML = "Calculadora"
+// igual.innerHTML = "="
+// igual.style = "cursor:default"
+// valor1.style = "margin-bottom: 1px;width:90px; border: 2px solid black;cursor:default;text-align:center"
+// valor2.style = "margin-top: 1px;width:90px; border: 2px solid black;cursor:default;text-align:center"
+// resultado.style = "border: 2px solid black; width:90px; text-align:center;cursor:default"
+// valor1.setAttribute("placeholder", "Valor1:")
+// valor1.setAttribute("type", "text")
+// valor2.setAttribute("type", "text")
+// valor2.setAttribute("placeholder", "Valor2:")
+
+// const botaoAdicao = document.createElement("div")
+// const botaoSubtracao = document.createElement("div")
+// const botaoMultiplicacao = document.createElement("div")
+// const botaoDivisao = document.createElement("div")
+
+// divButtons.appendChild(botaoAdicao)
+// divButtons.appendChild(botaoSubtracao)
+// divButtons.appendChild(botaoMultiplicacao)
+// divButtons.appendChild(botaoDivisao)
+
+// divButtons.style = "display:flex; flex-direction: row"
+// botaoAdicao.style = "width:22px; border: 2px solid black;border-right:0;text-align:center;cursor:pointer"
+// botaoSubtracao.style = "width:22px; border: 2px solid black;border-right:0;text-align:center;cursor:pointer"
+// botaoMultiplicacao.style = "width:22px; border: 2px solid black;border-right:0;text-align:center;cursor:pointer"
+// botaoDivisao.style = "width:22px; border: 2px solid black;text-align:center;cursor:pointer"
+
+
+// botaoAdicao.innerHTML = "+"
+// botaoSubtracao.innerHTML = "-"
+// botaoMultiplicacao.innerHTML = "x"
+// botaoDivisao.innerHTML = "/"
+// resultado.innerHTML = 0
+
+
+// const hoverEl = (x) => {
+//     x.addEventListener("mouseover", () => {
+//         x.style.backgroundColor = "gray"
+//     })
+//     x.addEventListener("mouseout", () => {
+//         x.style.backgroundColor = ""
+//     })
+// }
+
+// hoverEl(botaoAdicao)
+// hoverEl(botaoSubtracao)
+// hoverEl(botaoMultiplicacao)
+// hoverEl(botaoDivisao)
+// hoverEl(resultado)
+
+// let op = [
+//     (v1, v2) => {
+//         return Number(v1) + Number(v2)
+//     },
+//     (v1, v2) => {
+//         return Number(v1) - Number(v2)
+//     },
+//     (v1, v2) => {
+//         return Number(v1) * Number(v2)
+//     },
+//     (v1, v2) => {
+//         return Number(v1) / Number(v2)
+//     }
+// ]
+
+// botaoAdicao.addEventListener("click", () => { resultado.innerHTML = op[0](valor1.value, valor2.value) })
+// botaoSubtracao.addEventListener("click", () => { resultado.innerHTML = op[1](valor1.value, valor2.value) })
+// botaoMultiplicacao.addEventListener("click", () => { resultado.innerHTML = op[2](valor1.value, valor2.value) })
+// botaoDivisao.addEventListener("click", () => { resultado.innerHTML = op[3](valor1.value, valor2.value) })
+// resultado.addEventListener("click", () => { resultado.innerHTML = 0; valor1.value = ""; valor2.value = "" })
+
+// 25 - Coleção new Map
+
+// CODE:
+
+// const caixaA54 = document.querySelector("#A52")
+// caixaA54.style.display = "flex"
+
+// const mapa = new Map()
+
+// mapa.set("cursos", "JavaScript")
+// mapa.set(1, "my")
+// mapa.set(2, 100)
+// mapa.set("Dinheiro", 1000)
+
+// console.log(mapa)
+
+// if (mapa.has("Dinheiro")) {
+//     caixaA54.innerHTML = "Tem dinheiro" + " (" + mapa.get("Dinheiro") + ")"
+// } else {
+//     caixaA54.innerHTML = "Não tem dinheiro"
+// }
+// // caixaA54.innerHTML = mapa.get("cursos")
+
+// 26 - Coleção Set - não permite entradas duplicadas, ou seja, não permite dois elementos iguais[principal caracteristica]
+
+// CODE:
+
+// const caixaA55 = document.querySelector("#A52")
+// caixaA55.style.display = "flex"
+
+// const musicas = new Set(["musica 1", "musica 2", "musica 3"])
+
+// musicas.add("musica 4")
+
+// musicas.delete("musica 1")
+
+// musicas.forEach((e) => {
+//     caixaA55.innerHTML += e + "<br/>"
+// })
+// musicas.clear()
+// console.log(musicas)
+
+// 27 - 
+
