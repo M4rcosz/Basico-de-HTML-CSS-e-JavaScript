@@ -908,5 +908,214 @@ botaoExercicios.addEventListener("click", () => {
 // musicas.clear()
 // console.log(musicas)
 
-// 27 - 
+// 27 - Templates Strings - nova forma de tratar strings (``)
 
+// CODE:
+
+// const caixaA56 = document.querySelector("#A52")
+// caixaA56.style.display = "flex"
+
+// const curso = `JavaScript`
+// const canal = `CFB Cursos`
+
+// const frase = `Este é o curso de ${curso} do canal <br/>\n ${canal}`
+
+// caixaA56.innerHTML = frase
+
+// const carros = ["Carro 1", "Carro 2", "Carro 3", "Carro 4"]
+
+// let ul = `<ul>`
+// carros.map((e) => {
+//     ul += `<li>${e}</li>`
+// })
+// ul + `</ul>`
+
+// caixaA56.innerHTML += ul
+
+// 28 - Objetos
+// 28.1 - class{constructor()} - classe construtora
+
+// CODE:
+
+// const caixaA57 = document.querySelector("#A52")
+// caixaA57.style.display = "flex"
+
+// class Pessoa {
+//     constructor(nome) {
+//         this.nome = nome
+//     }
+// }
+
+// const p1 = new Pessoa("Marcos")
+// const p2 = new Pessoa("Bruno")
+// const p3 = new Pessoa("Davi")
+
+// caixaA57.innerHTML = `${p1.nome} <br/> ${p2.nome} <br/> ${p3.nome}`
+
+// console.log(p1)
+// console.log(p2)
+// console.log(p3)
+
+// 28.2 - class
+
+// CODE:
+
+// const caixaA58 = document.querySelector("#A52")
+// caixaA58.style.display = "flex"
+
+// class Carro {
+//     constructor(nome, tipo) {
+//         this.nome = nome
+//         if (tipo == 1) {
+//             this.tipo = "Esportivo"
+//             this.velMax = 300
+//         } else if (tipo == 2) {
+//             this.tipo = "Utilitário"
+//             this.velMax = 100
+//         }
+//         else if (tipo == 3) {
+//             this.tipo = "Passeio"
+//             this.velMax = 150
+//         }
+//         else {
+//             this.tipo = "Militar"
+//             this.velMax = 180
+//         }
+//     }
+//     setNome(nome) {
+//         return this.nome = nome
+//     }
+//     setTipo(tipo) {
+//         return this.tipo = tipo
+//     }
+//     setVelMax(velMax) {
+//         return this.velMax = velMax
+//     }
+//     getNome() {
+//         return this.nome
+//     }
+//     getTipo() {
+//         return this.tipo
+//     }
+//     getVelMax() {
+//         return this.velMax
+//     }
+//     getInfo() {
+//         return [this.nome, this.tipo, this.velMax]
+//     }
+//     info() {
+//         console.log(`Nome: ${this.nome}`)
+//         console.log(`Tipo: ${this.tipo}`)
+//         console.log(`VelMax: ${this.velMax}`)
+//         console.log(`--------------------`)
+//     }
+// }
+// const c1 = new Carro("Ferrari", 1)
+// const c2 = new Carro("Gol", 2)
+// const c3 = new Carro("Trailer", 3)
+// const c4 = new Carro("Tanque", 4)
+
+// c1.setNome("Lamborghini")
+
+// c1.info()
+// c1.getNome()
+// console.log(c1.getInfo())
+
+// c1.getInfo().map((e) => {
+//     caixaA58.innerHTML += `${e}<br/>`
+// })
+
+// caixaA58.innerHTML += `<br/>Nome: ${c1.nome}<br/> Tipo: ${c1.tipo}<br/> VelMax: ${c1.velMax}`
+
+// 28.3 - objeto A59 - ex pratico
+
+// 28.4 - objeto A60 - class -> function - modelo construtor usando function
+
+// 28.5 - objeto A61 - objetos literais
+
+// 28.6 - herança - classe que herda outra classe - super()= pegar os parametros do pai(this.),[extends = definir a ligação de herança, filho->pai/base]
+
+// CODE:
+
+// class Carro{
+//     constructor(nome,portas){
+//         this.nome=nome
+//         this.portas=portas
+//     }
+//     setCor=function(){
+//         this.cor=cor
+//     }
+// }
+
+// class Esportivo extends Carro{
+//     constructor(nome,portas,velocidade){
+//     super(nome,portas)
+//     this.velocidade=velocidade
+//     }
+// }
+
+// 27 - classes - exercicios A63 e A64
+
+// 28 - Conversões em JSON - [stringify(obj) = Converte objeto em string JSON] [parse(stringJSON)= Converte string JSON em objeto]
+
+// CODE:
+
+// const pc = {
+//     processador: "ryzen 5 4600G",
+//     placa_mae: "ASRock A320"
+// }
+
+// const s_json_pc = JSON.stringify(pc)
+// const o_json_pc = JSON.parse(s_json_pc)
+
+// console.log(s_json_pc)
+// console.log(o_json_pc)
+
+// 29 - static - metodo para indicar uma propriedade ou método para a classe toda
+
+// CODE:
+
+// class Pc {
+//     static ligado = false
+//     constructor(processador, placa_mae) {
+//         this.processador = processador
+//         this.placa_mae = placa_mae
+//     }
+//     info = function () {
+//         console.log(`Processador: ${this.processador}`)
+//         console.log(`Placa-Mãe: ${this.placa_mae}`)
+//         console.log(`Ligado: ${(Pc.ligado ? "Sim" : "Não")}`)
+//         console.log(`---------------------------`)
+//     }
+//     static ligar = function () {
+//         Pc.ligado = true
+//     }
+// }
+
+// const pc1 = new Pc("Ryzen 5 4600G", "ASRock A320")
+// const pc2 = new Pc("Ryzen 5 5600G", "ASRock B420")
+
+// pc1.info()
+// pc2.info()
+
+// Pc.ligar()
+
+// pc1.info()
+// pc2.info()
+
+// 30 - Prototype - adicionar propriedades ou métodos após a classe já ter sido estanciada
+
+// CODE:
+
+// const Pc = function (processador, placa_mae) {
+//     this.processador = processador,
+//         this.placa_mae = placa_mae
+// }
+
+// const pc1 = new Pc("Ryzen 5 4600G", "ASRock A320")
+
+// Pc.prototype.preco = 2000
+
+// console.log(Pc)
+// console.log(pc1)
+// console.log(Pc.prototype.preco)
