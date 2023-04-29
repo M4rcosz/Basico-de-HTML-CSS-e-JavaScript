@@ -1119,3 +1119,73 @@ botaoExercicios.addEventListener("click", () => {
 // console.log(Pc)
 // console.log(pc1)
 // console.log(Pc.prototype.preco)
+
+// 31 - Polomorfismo - A68 - métodos ou funções com o mesmo nome de sua classe pai - pegar um método do pai que possui o mesmo nome do metodo do filho super.metodo()
+
+// CODE:
+
+// class Carro{
+//     constructor(a,b){
+//         this.a=a
+//         this.b=b
+//     }
+//     info(){
+//         console.log(itemA)
+//         console.log(itemB)
+//     }
+// }
+
+// class Militar extends Carro{
+//     constructor(){
+//         super(a,b)
+//     }
+//     info(){
+//         super.info()
+//         console.log(itemC)
+//     }
+// }
+
+// 32 - Abstract - A69 - usar uma classe como base e adicionar condições para que ela não seja utilizada e que obrigatoriamente um metodo ou propriedade seja usado em seus herdeiros
+
+// CODE:
+
+// class CarroPadrao {
+//     constructor() {
+//         this.portas = 4
+//         this.rodas = 4
+//         if (this.constructor === CarroPadrao) {
+//             throw new TypeError("Esta classe não pode ser instânciada")
+//         }
+//         if (this.ligar === undefined) {
+//             throw new TypeError("É obrigatório o implemento do método ligar")
+//         }
+//     }
+// }
+
+// class Carro extends CarroPadrao {
+//     constructor(a, b) {
+//         super()
+//         this.a = a
+//         this.b = b
+//     }
+//     info() {
+//         console.log(itemA)
+//         console.log(itemB)
+//     }
+//     ligar() { }
+// }
+
+// class Militar extends Carro {
+//     constructor() {
+//         super(a, b)
+//     }
+//     info() {
+//         super.info()
+//         console.log(itemC)
+//     }
+// }
+
+// const c2 = new Carro("a", "b")
+// const c1 = new CarroPadrao()
+
+// 33 - Exercício calculadora - A70 - página de exercicios
