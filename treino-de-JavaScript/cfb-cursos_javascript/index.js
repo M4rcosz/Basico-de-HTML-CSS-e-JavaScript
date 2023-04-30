@@ -1189,3 +1189,24 @@ botaoExercicios.addEventListener("click", () => {
 // const c1 = new CarroPadrao()
 
 // 33 - Exercício calculadora - A70 - página de exercicios
+
+// 34 - clipboard - navigator.clipboard.writeText([x]var||input||campoDeTexto)[copiar Texto] - navigator.clipboard.readText([x]var||input||campoDeTexto)[colar Texto]
+// ATENÇÃO: usar x.select() e x.setSelectionRange(caracter x, até,caracter y[0,99999])
+
+// comando de copiar, pode ser usado em botao para copiar um campo ou texto especifico
+
+// CODE:
+
+// test.select()
+// test.setSelectionRange(0,99999)
+// navigator.clipboard.writeText(test.value)
+// navigator.clipboard.readText(test.value)
+
+// 35 - Criando ABA/Gaveta para calculadora do Mini-Projeto A74
+
+// 36 - Promise - A75 e A76 - promise é como um função de classe para indicar uma promessa de retorno, que após um determinado tempo de processamento como o timeout, apos isso ele
+// promete retornar um conteúdo, A75 e A76 V76 e V77 CFB Cursos JavaScript PlayList
+
+// 37 - Data e Hora
+
+

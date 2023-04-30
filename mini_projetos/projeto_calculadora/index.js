@@ -16,7 +16,6 @@ const on_cl = document.getElementById("on_cl")
 const del = document.getElementById("delete")
 const inputTela = document.getElementById("iDTelaCalculadora")
 const igual = document.getElementById("igual")
-
 todasTeclas.map((e) => {
     e.addEventListener("mousedown", (evt) => {
         let el = evt.target
@@ -30,13 +29,17 @@ todasTeclas.map((e) => {
         setTimeout(() => {
             if (destaque === true) {
                 el.style.backgroundColor = "rgb(255, 0, 85)"
+                el.classList.toggle("mouseClickSize")
+
             }
             else {
                 el.style.backgroundColor = "white"
+                el.classList.toggle("mouseClickSize")
+
 
             }
         }, 350);
-
+        el.classList.toggle("mouseClickSize")
     })
 })
 on_cl.addEventListener("click", () => {
@@ -73,6 +76,7 @@ todasTeclaseEx.map((e) => {
                 inputTela.value += el.innerHTML
             }
         }
+
     })
 })
 todasTeclaseOP.map((e) => {
@@ -112,8 +116,44 @@ del.addEventListener("click", () => {
 })
 
 igual.addEventListener("click", () => {
-    sinal = false
-    virgula = false
-    const res = eval(inputTela.value)
-    inputTela.value = res
+    if (inputTela.value !== "") {
+        sinal = false
+        virgula = false
+        const res = eval(inputTela.value)
+        inputTela.value = res
+    }
 })
+
+// aba da calculadora
+const aba_calc = document.querySelector("#aba_calc")
+const calc = document.querySelector("#calc")
+const aba_img = document.querySelector("#aba_img")
+
+aba_calc.addEventListener("click", (evt) => {
+    aba_calc.classList.remove("c")
+    calc.classList.toggle("calc_pos")
+    aba_calc.classList.toggle("b")
+    aba_img.classList.toggle("aba_img_class")
+    aba_calc.classList.add("aba_calc_class")
+    aba_calc.classList.toggle("aba_calc_class")
+
+    if (calc.classList.contains("calc_pos")) {
+        aba_img.setAttribute("src", "./img/seta_baixo.svg")
+    }
+    else {
+        aba_img.setAttribute("src", "./img/seta_cima.svg")
+    }
+})
+
+aba_calc.addEventListener("mouseover", (evt) => {
+    if (!aba_calc.classList.contains("b")) {
+        aba_calc.classList.add("c")
+        aba_calc.classList.remove("aba_calc_class")
+    }
+})
+aba_calc.addEventListener("mouseout", (evt) => {
+    if (!aba_calc.classList.contains("b")) {
+        aba_calc.classList.add("aba_calc_class")
+    }
+})
+
