@@ -1207,6 +1207,71 @@ botaoExercicios.addEventListener("click", () => {
 // 36 - Promise - A75 e A76 - promise é como um função de classe para indicar uma promessa de retorno, que após um determinado tempo de processamento como o timeout, apos isso ele
 // promete retornar um conteúdo, A75 e A76 V76 e V77 CFB Cursos JavaScript PlayList
 
-// 37 - Data e Hora
+// 37 - Data e Hora - principais métodos
 
+// CODE:
 
+// getDate() = Dia do Mês
+// getDay() = Dia da Semana(número)
+// getFullYear() = Ano com 4 digitos
+// getHours() = Horas
+// getMilliseconds() = Milisegundos
+// getMinutes() = Minutos
+// getMonth() = Mês
+// getSeconds() = Segundos
+// getTime() = Timestamp(milisegundos desde 1 de Janeiro de 1970, 00: 00: 00 UTC)
+// Date.now() = Timestamp(milisegundos desde 1 de Janeiro de 1970, 00: 00: 00 UTC)
+// getTimezoneOffset() = Timezone da localidade
+// setDate() = Define um dia do mês para a data
+// setMonth() = Define um mês para a data
+// setFullYear() = Define um ano para a data
+// setHours() = Define horas
+// setMinutes() = Define minutos
+// setSeconds() = Define segundos
+// setMilliseconds() = Define milisegundos
+// toDateString() = Retorna somente a data
+
+// data com formato (dia/mês/ano)
+
+// CODE:
+
+// const caixaA77 = document.querySelector("#A52")
+// caixaA77.style.display = "flex"
+
+// const data = new Date()
+
+// let dia = data.getDay()
+// dia = dia < 10 ? "0" + dia : dia
+
+// let mes = data.getMonth()
+// mes = mes < 10 ? "0" + (mes + 1) : (mes + 1)
+
+// caixaA77.innerHTML = `Data:(${dia}/${(mes)}/${data.getFullYear()})`
+
+// const relogio = () => {
+//     const data = new Date()
+//     let hora = data.getHours()
+//     hora = hora < 10 ? "0" + hora : hora
+//     let minuto = data.getMinutes()
+//     minuto = minuto < 10 ? "0" + minuto : minuto
+//     let segundo = data.getSeconds()
+//     segundo = segundo < 10 ? "0" + segundo : segundo
+//     caixaA77.innerHTML = `Data:(${dia}/${(mes)}/${data.getFullYear()})<br/> Relógio: ${hora}:${minuto}:${segundo}`
+// }
+// relogio()
+// const intevalo = setInterval(relogio, 1000)
+
+// 38 - Biblioteca matemática - A80/V81 CFB Cursos
+
+// CODE:
+
+// Math.METHOD()/PROPERTY
+// Math.floor() = arredondar com o menor valor
+// Math.round() = arredondar com o maior valor
+// Math.random()*x = gerar um numero aleatorio de 0 até o valor que desejar, no caso o "x"
+// Math.pow() = calculo de potencia [(x,y)], numero x representa o valor da potencia, e y o numero a ser elevado
+// Math.PI = gera o valor de PI
+
+// 38.1 - Exercicio de rotação de olhos com mousemove - A81/V82 CFB Cursos
+
+// 39 - Exercicio de Classe com bolinhas - A82 a A86/ V83 a V87 CFB Cursos

@@ -1,0 +1,59 @@
+* {
+    box-sizing: border-box;
+
+}
+
+body {
+    margin: 3px;
+    box-sizing: border-box;
+}
+
+#nav {
+    height: 11vh;
+    border: 3px solid black;
+    display: flex;
+    flex-direction: row;
+}
+
+.divs {
+    width: 33.333333%;
+    border: 2px solid black;
+    display: flex;
+    float: left;
+    justify-content: center;
+    flex-direction: column;
+}
+
+main {
+    height: 88.4vh;
+    border: 5px solid black;
+    border-top: 0;
+}
+
+.btn {
+    height: 30px;
+    margin: 0 0 0 30px;
+    width: 150px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.numClass {
+    height: 25px;
+    margin: 0 0 5px 30px;
+    width: 150px;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 2px 0 0 3px;
+}
+
+#divNumBolinhas {
+    display: flex;
+    float: left;
+    justify-content: end;
+    text-align: end;
+}
+
+#divNumBolinhas div {
+    padding: 2px 3px 0 0;
+}
