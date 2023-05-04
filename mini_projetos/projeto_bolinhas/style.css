@@ -1,12 +1,11 @@
 * {
+    margin: 0;
+    padding: 0;
+    border: none;
     box-sizing: border-box;
 
 }
 
-body {
-    margin: 3px;
-    box-sizing: border-box;
-}
 
 #nav {
     height: 11vh;
@@ -25,9 +24,17 @@ body {
 }
 
 main {
-    height: 88.4vh;
-    border: 5px solid black;
-    border-top: 0;
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    min-height: fill-available;
+    min-height: -webkit-fill-available;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 5px;
+    position: absolute;
+    overflow: hidden;
+
 }
 
 .btn {
@@ -36,6 +43,8 @@ main {
     width: 150px;
     border-radius: 10px;
     cursor: pointer;
+    border: 2px solid black;
+
 }
 
 .numClass {
@@ -45,6 +54,7 @@ main {
     border: 2px solid black;
     border-radius: 10px;
     padding: 2px 0 0 3px;
+    user-select: none;
 }
 
 #divNumBolinhas {
@@ -56,4 +66,61 @@ main {
 
 #divNumBolinhas div {
     padding: 2px 3px 0 0;
+}
+
+.bolinhas {
+    position: absolute;
+    border-radius: 100px;
+
+}
+
+#divAeD {
+    display: flex;
+    font-size: 14px;
+    text-align: center;
+    flex-direction: column;
+    position: relative;
+    bottom: 25px;
+    user-select: none;
+}
+
+.aed {
+    border-radius: 10px;
+    border: 2px solid black;
+    cursor: pointer;
+    background-color: #ccc;
+}
+
+div.aed {
+    margin: 3px 3px 0 0;
+}
+
+#divRemoverBolinhas {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+
+}
+
+#btncolorBolinhas {
+    padding: 7px 4px;
+    background-color: #ccc;
+}
+
+.btn1 {
+    width: 150px;
+    height: 40px;
+    background-color: rgb(12, 0, 184);
+    border-radius: 10px;
+    cursor: pointer;
+    color: white;
+    margin-top: 10px;
+    border: 2px solid black;
+}
+
+h3 {
+    margin: 0 0 0 25px;
+    font-size: 15px;
+    user-select: none;
+    text-align: initial;
 }

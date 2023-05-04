@@ -12,14 +12,29 @@
 <body>
     <nav id="nav">
         <div id="divNumBolinhas" class="divs">
+            <button id="miniProj" class="btn1" style="margin: 0 0 8px 30px;">Mini-Projetos</button>
+            <h3 style="margin: 0 0 0px 40px;">Número de Bolinhas</h3>
             <div id="numBolinhas" class="numClass">0</div>
         </div>
         <div id="divAddBolinhas" class="divs">
-            <input type="number" name="" id="inputBolinhas" class="numClass">
+            <input type="number" name="" id="inputBolinhas" class="numClass" placeholder="Adicionar Bolinhas:">
             <button id="btnAddBolinhas" class="btn">Adicionar</button>
         </div>
         <div id="divRemoverBolinhas" class="divs">
             <button id="btnremoverBolinhas" class="btn">Remover Tudo</button>
+            <div id="divAeD" style="margin-top: 5px; border: 0;" class="btn">
+                <button id="btncolorBolinhas" class="aed">Piscar cores
+                    aleatórias</button>
+                <div style="display: flex; flex-direction: row;">
+                    <div id="aumentar" class="aed">Aumentar vel Piscada</div>
+                    <div id="diminuir" class="aed" style="margin-right: 0;">Diminuir vel Piscada</div>
+                </div>
+            </div>
+            <div style="display: flex; flex-direction: column;">
+                <h3>Velocidade das piscadas:</h3>
+                <div id="velPiscada" class="numClass">0 Milissegundos</div>
+            </div>
+
         </div>
     </nav>
     <main id="caixaBolinhas"></main>
