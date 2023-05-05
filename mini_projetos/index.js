@@ -21,9 +21,10 @@ const rgb = () => {
         let r = (Math.floor(Math.random() * 255))
         let g = (Math.floor(Math.random() * 255))
         let b = (Math.floor(Math.random() * 255))
-        botaoProjBolinhas.style = `text-shadow: 2px 1px 2px black, -2px 1px 2px black, 0px -2px 2px black;font-weight:bold;background-color: rgb(${r}, ${g}, ${b})`
+        element.style = `text-shadow: 2px 1px 2px black, -2px 1px 2px black, 0px -2px 2px black;font-weight:bold;background-color: rgb(${r}, ${g}, ${b})`
     }
 }
+let element = botaoProjBolinhas
 const intevalo = setInterval(rgb, 200)
 // document.body.style.backgroundColor = `rgb(${rbg()},10,10)`
 // 

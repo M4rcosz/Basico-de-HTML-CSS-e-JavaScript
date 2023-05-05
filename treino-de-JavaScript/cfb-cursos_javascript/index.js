@@ -1230,6 +1230,10 @@ botaoExercicios.addEventListener("click", () => {
 // setSeconds() = Define segundos
 // setMilliseconds() = Define milisegundos
 // toDateString() = Retorna somente a data
+// setTimeout() = Colocar um tempo de esperar para executar algum código
+// setInterval() = Colocar um intervalo para executar algum código
+// clearInterval() = Parar um intervalo de execução
+// NOTA IMPORTANTE: Caso utilizar o setInterval com uma função com parâmentro, utilizar uma função anônima e dentro a função em questão
 
 // data com formato (dia/mês/ano)
 
@@ -1266,12 +1270,231 @@ botaoExercicios.addEventListener("click", () => {
 // CODE:
 
 // Math.METHOD()/PROPERTY
-// Math.floor() = arredondar com o menor valor
-// Math.round() = arredondar com o maior valor
-// Math.random()*x = gerar um numero aleatorio de 0 até o valor que desejar, no caso o "x"
-// Math.pow() = calculo de potencia [(x,y)], numero x representa o valor da potencia, e y o numero a ser elevado
-// Math.PI = gera o valor de PI
+// Math.floor() // arredondar com o menor valor
+// Math.round() // arredondar com o maior valor
+// Math.random()*x // gerar um numero aleatorio de 0 até o valor que desejar, no caso o "x"
+// Math.pow() // calculo de potencia [(x,y)], numero x representa o valor da potencia, e y o numero a ser elevado
+// Math.PI // gera o valor de PI
 
 // 38.1 - Exercicio de rotação de olhos com mousemove - A81/V82 CFB Cursos
 
 // 39 - Exercicio de Classe com bolinhas - A82 a A86/ V83 a V87 CFB Cursos
+
+// 40 - window.location & window.history [extra(html) = onsubmit="event.preventDefault()" {CANCELAR O EVENTO}]
+
+// CODE:
+
+// window.location="./index.html"
+// window.location="https://www.google.com.br"
+// window.location.replace("https://www.google.com.br") // Deleta a URL corrente do Histórico
+// window.location.assign("https://www.google.com.br") // NÃO deleta a URL corrente do Histórico
+// window.location.reload() // Recarregar a página
+// window.history.back() // Voltar uma página no histórico
+// window.history.forward() // Avançar uma página no histórico
+// window.history.go(1)// Escolher quantas páginas avançar ou voltar[1=avançar 1 pagina, -1=voltar 1 pagina]
+
+// 41 - Caixas de Diálogos - alert,confirm,prompt - São os 3 padrões mas é possível criar sua própria caixa de diálogo
+
+// CODE:
+
+// const a = alert("Você foi alertado") //Nenhum retorno (void)
+// console.log(a)
+
+// const c = confirm("Quer ser alertado ?") //Retorna true se pressionar OK ou false se pressionar cancelar
+// console.log(c)
+
+// const p = prompt("Qual seu nome ?", "Texto padrão")//Retorna a string que foi digitada quando apertar OK ou null se apertar CANCELAR
+// console.log(p)
+
+// 42 - Criando PDF e Imprimindo conteúdo da página em HTML
+
+//CODE:
+
+// //Criando o conteúdo (HTML e CSS)
+// const conteudo = document.createElement("div")
+// conteudo.setAttribute("id", "conteudo")
+// conteudo.style = "border:2px solid black;width:300px;height:300px;margin:20px 0 0 700px;justify-content:center;display:flex;align-items:center;position:absolute;top:300px"
+// document.body.appendChild(conteudo)
+// conteudo.innerHTML = "Teste de impressão e pdf"
+
+// //Botão de Impressão
+// const botao = document.createElement("button")
+// botao.innerHTML = "Imprimir"
+// botao.style = "margin: 10px 0 0 775px"
+// document.body.appendChild(botao)
+
+// //Impressão e PDF
+// botao.addEventListener("click", (evt) => {
+//     const conteud = document.getElementById("conteudo").innerHTML
+
+//     let estilo = "<style>"
+//     estilo += " #conteudo {border:2px solid black;width:300px;height:300px;margin:20px 0 0 700px;justify-content:center;display:flex;align-items:center}"
+//     estilo += "</style>"
+
+//     const win = window.open("", "", "height=700,width=700")
+
+//     win.document.write("<html><head>")
+//     win.document.write("<title>Imprimindo ou PDF</title>")
+//     win.document.write(estilo)
+//     win.document.write("</head><body>")
+//     win.document.write(conteud)
+//     win.document.write("</body></html>")
+
+//     win.print()
+//     win.close()
+// })
+
+// 43 - Objetos Literais A90&A91 V91&A92
+
+//CODE:
+
+//Criando o conteúdo (HTML e CSS)
+// const conteudo = document.createElement("div")
+// conteudo.setAttribute("id", "conteudo")
+// conteudo.style = "border:2px solid black;width:300px;height:500px;margin:20px 0 0 700px;justify-content:center;display:flex;align-items:center;position:absolute;top:300px"
+// document.body.appendChild(conteudo)
+
+//Objeto Literal
+
+// const computador = {
+//     processador: "i9",//Propriedades
+//     ram: "32GB",
+//     sdd: "1TB",
+//     info: function () { console.log(this.processador) }, //Método com function [i9]
+//     info2: () => { console.log(this.processador) } //Método com arrow function [undefined]
+
+// }
+// console.log(computador)
+// computador.info() //Chamando o método com function
+// computador.info2() //Chamando o método com arrow function
+// conteudo.innerHTML = `Processador:${computador.processador}<br/>Memória RAM${computador.ram}<br/>SDD:${computador.sdd}` //Imprimindo na tela o conteúdo
+
+//Array de Objetos Literais
+
+// const computadores = [
+//     {
+//         processador: "i9",
+//         ram: "32GB",
+//         sdd: "1TB",
+//         info: () => { console.log(computadores[0].processador) }
+//     },
+//     {
+//         processador: "i7",
+//         ram: "16GB",
+//         sdd: "1TB",
+//         info: () => { console.log(computadores[1].processador) }
+//     },
+//     {
+//         processador: "i5",
+//         ram: "8GB",
+//         sdd: "1TB",
+//         info: () => { console.log(computadores[2].processador) }
+//     }
+// ]
+// console.log(computadores)
+// computadores[0].info() //Chamando método de um objeto literal dentro de um array
+// computadores[1].info()
+// computadores[2].info()
+
+// computadores.map((e, i) => {
+//     computadores[i].placaVideo = "RTX" //Adicionando nova Propriedade, maneira 1
+//     computadores[i]["fonte"] = "GameMax" //Adicionando nova Propriedade, maneira 2
+//     conteudo.innerHTML += `Computador ${(i + 1)}:<br/><br/>`
+//     conteudo.innerHTML += `Processador: ${computadores[i].processador}<br/>`
+//     conteudo.innerHTML += `Memória RAM: ${computadores[i].ram}<br/>`
+//     conteudo.innerHTML += `Armazenamento: ${computadores[i].sdd}<br/>`
+//     conteudo.innerHTML += `Placa-de-video: ${computadores[i].placaVideo}<br/>`
+//     conteudo.innerHTML += `Fonte: ${computadores[i].fonte}<br/>`
+//     conteudo.innerHTML += `-----------------------------------------------<br/>`
+//     console.log(computadores)
+// }) // Imprimindo um array de objetos literais na tela
+
+//Clonando e Criando novos objetos literais apartir de outro
+
+// const computador = {
+//     processador: "",//Propriedades
+//     ram: "32GB",
+//     sdd: "1TB",
+//     info: function () { console.log("Processador:" + this.processador) }, //Método com function [i9]
+//     info2: () => { console.log(this.processador) } //Método com arrow function [undefined]
+
+// }
+// console.log("Original")
+// console.log(computador)
+// computador.info()
+// const c1 = Object.assign({}, computador) //Clonando um objeto literal [{}=objeto literal vazio fundiu com(,computador)]
+// console.log("Clone")
+// console.log(c1)
+
+// //Fundindo vários objetos literais
+
+// const c2 = { obj1: "1" }
+// const c3 = { obj2: "2" }
+// const c4 = { obj3: "3" }
+// const fusao = Object.assign(c2, c3, c4)
+// console.log("Fusão")
+// console.log(fusao)
+
+// //Criando um novo objeto a partir de um já existente (quase como se fosse uma class)
+
+// const o1 = Object.create(computador)
+// o1.processador = "i9    "
+// console.log("Novo")
+// o1.info()
+// console.log(o1)
+
+// 44 - Módulos - A92 V93 - Reutilizar códigos de outros arquivos script
+
+//CODE:
+
+// arquivo1.js - Arquivo no qual quero importar/trazer um código de outro arquivo
+// HTML:
+
+//     <script src="arquivo1.js" type:module></script>
+
+// JavaScript:
+
+// import { cursos } from "arquivo2.js"
+
+
+// arquivo2.js - Arquivo no qual você enviará/exportará um código para outro
+// JavaScript:
+
+// const cursos=["curso1","curso2","curso3"]
+// export {cursos}
+
+// EXEMPLO:
+//--------- EXPORT: ----------//
+
+// const asdasdasda = 20000
+
+// export { asdasdasda } //exportação
+
+// export default carros //exportação como padrão de um arquvo, só pode ter uma exportação como padrão por arquivo
+
+//--------- IMPORT -----------// (NÃO ESQUECE DE COLOCAR .JS NO FINAL)
+
+// import { cursos } from "./modules.js" // - importando um elemento
+// console.log(cursos)
+
+// import { rgb, cursos } from "./modules.js" // - importando dois ou mais elementos
+// console.log(cursos)
+// setInterval(() => { rgb(botaoExercicios) }, 5000) // NOTA IMPORTANTE: Caso utilizar o setInterval com uma função com parâmentro, utilizar uma função anônima e dentro a função em questão
+
+// import carros from "./modules.js" //Chamando uma exportação padrão (não precisa utilizar o mesmo nome na exportação default[o "carros" poderia ser qualquer valor que seria a mesma coisa])
+// carros()
+
+// import { cursos as cursao } from "./modules.js" //Mudando o valor/nome do item importado
+// console.log(cursao)
+
+// import * as allImport from "./modules.js" //Importando todos os elementos que foram exportados do arquivo(./modules.js)
+// allImport.default()
+// console.log(allImport.cursos)
+// setInterval(() => { allImport.rgb(botaoExercicios) }, 5000)
+
+// import { Cursos as cursote } from "./modules.js" //Importando classes (sem o construtor)
+// console.log(cursote.cursos1)
+// cursote.addCursos("Curso EXTRA")
+// console.log(cursote.cursos1)
+
+// 44.2 - Exercicio pratico - A92-A97 V93-V98
