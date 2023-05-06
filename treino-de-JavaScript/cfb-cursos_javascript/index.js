@@ -1498,3 +1498,222 @@ botaoExercicios.addEventListener("click", () => {
 // console.log(cursote.cursos1)
 
 // 44.2 - Exercicio pratico - A92-A97 V93-V98
+
+// 45 - SYMBOL - A98-A100 - Traz um identificador único para o item Symbol, tal identificador apenas utilizado no próprio arquivo .js,ou seja não se pode utiliza-lo no DOM.
+
+//CODE:
+
+// const s1 = Symbol() //Passa ao item um identificador único ainda não definido
+// const s2 = Symbol()
+// const s3 = Symbol.for("chave") //Passa ao item um identificador global definido como parâmetro ("chave")
+// const s4 = Symbol.for("chave") //Pode utilizar um identificador global para dois items, o que os torna "iguais"
+
+// console.log(s1)
+// console.log(s1 === s2)
+// console.log(s3 === s4)
+// console.log(Symbol.keyFor(s1))//Procurando pela chave global do item symbol [undefined]
+// console.log(Symbol.keyFor(s3))//Procurando pela chave global do item symbol ["chave"]
+
+//46 - Funções para manipulação de Strings - A101-A103
+
+//CODE:
+
+// let nome = new String("Marcos") //Class (new String) foi utilizada para melhor observação do conteúdo no console [objeto String]
+// let canal = " zHacks a "
+
+// console.log(nome) //Clara diferença no console para análise
+// console.log(typeof (nome)) //Object string
+// console.log(canal)
+// console.log(typeof (canal)) //var String
+
+// console.log(nome.charAt(0)) //Impressão do carácter na posição definida no parâmetro(0) [como se a string fosse um array e cada letra/character fosse um elemento dentro desse array]
+// console.log(canal.charAt(1))
+
+// console.log(nome.charCodeAt(0))//Impressão do código do carácter
+
+// console.log(nome.concat(canal)) //Impressão da fusão/concatenação do item nome com o item canal [apenas retornou no console, os items em si não se fundiram ainda]
+// console.log(nome)
+// nome = nome.concat(canal) //Fusão item nome com canal para com a variável "nome"
+// nome = new String(nome) //Transformei o valor nome para com a classe new String como parâmetro e valor (nome) também
+// console.log(nome)
+// console.log(nome.indexOf("a")) //Retorna o indice do primeiro item com o valor do parâmetro("a")
+// console.log(nome.lastIndexOf("a")) //Retorna o indice do último item com o valor do parâmetro("a")
+
+// let n1 = new String("Davi")
+// let n2 = new String("Davi")
+
+// console.log(n1.localeCompare(n2)) //Comparar dois Object String,se retornar 0 são iguais,se retornar 1 a primeira string é diferente e maior que a segunda,se retornar -1 a primeira string é diferente e menor que a segunda
+
+// let n3 = new String("Lucas") //Maior e diferente
+// let n4 = new String("Davi") //Menor e Diferente
+
+// console.log(n3.localeCompare(n4)) //1
+// console.log(n4.localeCompare(n3)) //-1
+
+// console.log(nome.replace("Marcos", "M4rcosz")) //Replace/Recolocar/Substituir pega o primeiro parâmetro como um valor dentro do array/object string e substitui pelo segundo parâmetro
+
+// console.log(nome.search("zHacks")) //Search/Pesquisar está associado a Regex que será apresentado no conteúdo (47) [Basicamente pesquisa a string e retorna o indice do primeiro carácter]
+
+// console.log(nome.slice(7, 13)) //Recortar como se fosse um CRTL + X, retorna o exato valor recortado com o primeiro parameter como o indice do começo do recorte e o segundo parameter como o indice do final do  recorte
+
+// console.log(nome.split("")) //Separa/Dividir os elementos de acordo com o que apresenta no primeiro parameter("")[string vazia, vai dividir tudo,todas as letras e espoaço e tudo]
+// console.log(nome.split("", 2))//Segundo parameter indica o número de items que serão divididos/separados e "adicionado" em um array de items separados
+// console.log(nome.split(" ")) //Separa/Dividir os elementos de acordo com o que apresenta no primeiro parameter(" ")[string com espaço, vai dividir tudo que está entre espaços]
+
+// console.log(nome.substring(7, 13)) //Semelhante ao slice
+
+// console.log(nome.substr(7, 6)) //Separa de acordo com o primeiro parameter com o indice do começo da separação e o segundo parameter como o número de carácteres após o começo a ser dividido
+
+// console.log(nome.toUpperCase())//Imprime todo o conteúdo em letra maiúscula
+// console.log(nome.toLocaleUpperCase())
+// console.log(nome.toLowerCase())//Imprime todo o conteúdo em letra minuscula
+// console.log(nome.toLocaleLowerCase())
+
+// console.log(nome)
+// console.log(nome.valueOf()) //Retorna o valor do objeto, ou seja a string em si
+
+// let num = 10
+// console.log(num.toString())//Imprimiu o valor número convertido para String
+// console.log(typeof (num))
+// num = num.toString()
+// console.log(typeof (num))
+
+// console.log(nome.startsWith("Mar"))//Retorna true or false se o array/string começa com o valor do parameter("Mar")
+
+// console.log(n3.endsWith("as"))//Retorna true or false se o array/string termina com o valor do parameter("as")
+
+// console.log(nome.includes("z"))//Retorna true or false se o array/string inclui o valor do parameter("z")
+
+// console.log(n4.repeat(4))//Imprimiu a string com o número de vezes indicado no pameter(4)
+
+// console.log(String.fromCodePoint(77, 65, 100, 101))//Retorna carácteres/números de acordo com o seu CodePoint
+
+// 47 - RegEx(Expressões Regulares) A105 e A106 [RegExp] - Verificar se o método aceita o RegExp
+
+// CODE:
+
+// let nome = new String("Marcos Paulo Freire 123456789 ooooooo")
+
+// console.log(nome.search("paulo")) //Valor não encontrado devido ao CaseSensitive, assim, o CodePoint do valor p minusculo e o P maiúsculo são diferentes
+
+// console.log(nome.search(/paulo/i)) //Usando as // dessas forma, e colocando uns inscrimento/modificador como por exemplo o i, que no RegEx significa para não utilizar o CasaSensitive
+
+// console.log(nome.match("o")) //Match/Corresponder ao valor do parameter, só que dessa forma ele apenas retornará o primero "o" que for encontrado
+
+// console.log(nome.match(/o/g)) //Com o Modificador g, significando como global, ele vai buscar e corresponder todos os valor com "o" e retornar
+
+// console.log(nome.match(/O/ig)) //Também é possível combinar os modificadores, assim, como nessa função,ignorando o CaseSensitive e pegando todos os valores correspondentes globais
+
+// console.log(nome.replace(/marcos/i, "M4rcosz"))
+
+// console.log(nome.replace(/a/ig, 4))
+
+// console.log(nome.match(/[oa]/ig)) //Retorna todos os "o" e "a" presente no "nome"
+
+// console.log(nome.match(/[a-e]/ig)) //Retorna as letras de "a" até(-) "e"
+
+// console.log(nome.match(/[a-e|1-7]/ig)) //Retorna as letras de "a" até(-) "e" e também(|) os números de "1" até "7"
+
+// //Metacarácteres
+
+// console.log(nome.match(/\d/ig)) //Retorna apenas digitos/valores númericos
+
+// console.log(nome.match(/\s/ig)) //Retorna apenas espaços " "
+
+// console.log(nome.match(/\bP/ig)) //DWORD
+
+// //Quantificadores (+,*)
+
+// console.log(nome.match(/o+/ig)) //Retorna os caracteres que estão junto como se fosse apenas um carácter
+
+// console.log(nome.match(/os/ig)) //Retorna caracteres com "os"
+
+// console.log(nome.match(/os*/ig)) //Retorna caracteres que comecem com o primero caracter de "os"("o") e o resto que continua com o ultimo caracter [Padrão]
+
+// let num = "1 10 100 1000 10000"
+
+// console.log(num)
+// console.log(num.match(/10/ig))
+// console.log(num.match(/10+/ig))
+// console.log(num.match(/10*/ig))
+// console.log(num.match(/10?/ig)) //Retorna apenas as primeras ocorrencias do 1 e do 0
+
+// 48 Animação com JavaScript Puro
+
+// CODE:
+// A107
+////Estruturação e Estilização (HTML e CSS)
+
+const carro = document.createElement("div")
+carro.style = "width:200px;height:50px;background-color:red;margin: 30px 0 0 0px"
+document.body.style = "margin:0;padding:0"
+document.body.appendChild(carro)
+const btn_left = document.createElement("button")
+const btn_right = document.createElement("button")
+btn_left.style = "margin: 0 10px 0 0"
+document.body.appendChild(btn_left)
+document.body.appendChild(btn_right)
+btn_left.innerHTML = "<--"
+btn_right.innerHTML = "-->"
+
+////Animação CODES
+
+const init = (x) => {
+    x.style.position = "relative"
+    x.style.left = "0px"
+}
+init(carro)
+let parar = false
+let parar2 = false
+let itv = null
+const mover = (dir) => {
+    let pos = parseInt(carro.style.left)
+    if (pos >= (dir * -1)) {
+        pos += dir
+        carro.style.left = `${pos}px`
+        console.log(pos)
+    }
+}
+
+btn_left.addEventListener("click", (evt) => {
+    clearInterval(itv)
+    if (parar2) {
+        if (!parar) {
+            clearInterval(itv)
+            itv = setInterval(mover, 10, -10)
+            parar = true
+        }
+        else if (parar) {
+            clearInterval(itv)
+            parar = false
+        }
+    }
+    else {
+        clearInterval(itv)
+        itv = setInterval(mover, 10, -10)
+        parar2 = true
+    }
+})
+
+btn_right.addEventListener("click", (evt) => {
+    clearInterval(itv)
+    if (!parar2) {
+        if (!parar) {
+            clearInterval(itv)
+            itv = setInterval(mover, 10, 10)
+            parar = true
+        }
+        else if (parar) {
+            clearInterval(itv)
+            parar = false
+        }
+    }
+    else {
+        clearInterval(itv)
+        itv = setInterval(mover, 10, 10)
+        parar2 = false
+    }
+
+})
+
+
