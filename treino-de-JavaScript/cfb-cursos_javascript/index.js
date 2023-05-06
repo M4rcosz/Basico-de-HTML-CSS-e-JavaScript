@@ -1665,7 +1665,7 @@ const init = (x) => {
 init(carro)
 let parar = false
 let parar2 = false
-let itv = null
+// let itv = null //M1
 const mover = (dir) => {
     let pos = parseInt(carro.style.left)
     if (pos >= (dir * -1)) {
@@ -1675,45 +1675,74 @@ const mover = (dir) => {
     }
 }
 
+let intervalo = {
+    nome: null,
+    ativar: function (dir) {
+        this.nome = setInterval(mover, 10, dir)
+    },
+    desativar: function () {
+        clearInterval(this.nome)
+    }
+}//M2/M3
+
 btn_left.addEventListener("click", (evt) => {
-    clearInterval(itv)
+    // clearInterval(itv)//M1
+    // intervalo.desativar()//M2
+    clearInterval(intervalo.nome)//M3
     if (parar2) {
         if (!parar) {
-            clearInterval(itv)
-            itv = setInterval(mover, 10, -10)
+            // clearInterval(itv) //M1
+            // itv = setInterval(mover, 10, -10) //M1
+            // intervalo.desativar()//M2
+            clearInterval(intervalo.nome)//M3
+            intervalo.ativar(-10)//M2
             parar = true
         }
         else if (parar) {
-            clearInterval(itv)
+            // clearInterval(itv)//M1
+            // intervalo.desativar()//M2
+            clearInterval(intervalo.nome)//M3
             parar = false
         }
     }
     else {
-        clearInterval(itv)
-        itv = setInterval(mover, 10, -10)
+        // clearInterval(itv)//M1
+        // itv = setInterval(mover, 10, -10)//M1
+        // intervalo.desativar()//M2
+        clearInterval(intervalo.nome)//M3
+        intervalo.ativar(-10)//M2
         parar2 = true
     }
 })
 
 btn_right.addEventListener("click", (evt) => {
-    clearInterval(itv)
+    // clearInterval(itv)//M1
+    // intervalo.desativar()//M2
+    clearInterval(intervalo.nome)//M3
     if (!parar2) {
         if (!parar) {
-            clearInterval(itv)
-            itv = setInterval(mover, 10, 10)
+            // clearInterval(itv)//M1
+            // itv = setInterval(mover, 10, 10)//M1
+            // intervalo.desativar()//M2
+            clearInterval(intervalo.nome)//M3
+            intervalo.ativar(10)//M2
             parar = true
         }
         else if (parar) {
-            clearInterval(itv)
+            // clearInterval(itv)//M1
+            // intervalo.desativar()//M2
+            clearInterval(intervalo.nome)//M3
             parar = false
         }
     }
     else {
-        clearInterval(itv)
-        itv = setInterval(mover, 10, 10)
+        // clearInterval(itv)//M1
+        // itv = setInterval(mover, 10, 10)//M1
+        // intervalo.desativar()//M2
+        clearInterval(intervalo.nome)//M3
+        intervalo.ativar(10)//M2
         parar2 = false
     }
 
 })
-
 
