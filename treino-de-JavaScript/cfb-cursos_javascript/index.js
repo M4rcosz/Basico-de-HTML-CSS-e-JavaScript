@@ -1644,105 +1644,375 @@ botaoExercicios.addEventListener("click", () => {
 // A107
 ////Estruturação e Estilização (HTML e CSS)
 
-const carro = document.createElement("div")
-carro.style = "width:200px;height:50px;background-color:red;margin: 30px 0 0 0px"
-document.body.style = "margin:0;padding:0"
-document.body.appendChild(carro)
-const btn_left = document.createElement("button")
-const btn_right = document.createElement("button")
-btn_left.style = "margin: 0 10px 0 0"
-document.body.appendChild(btn_left)
-document.body.appendChild(btn_right)
-btn_left.innerHTML = "<--"
-btn_right.innerHTML = "-->"
+// const carro = document.createElement("div")
+// carro.style = "width:200px;height:50px;background-color:red;margin: 30px 0 0 0"
+// document.body.style = "margin:0;padding:0"
+// document.body.appendChild(carro)
+// const btn_left = document.createElement("button")
+// const btn_right = document.createElement("button")
+// btn_left.style = "margin: 0 10px 0 0"
+// document.body.appendChild(btn_left)
+// document.body.appendChild(btn_right)
+// btn_left.innerHTML = "<--"
+// btn_right.innerHTML = "-->"
 
-////Animação CODES
+// ////Animação CODES
 
-const init = (x) => {
-    x.style.position = "relative"
-    x.style.left = "0px"
-}
-init(carro)
-let parar = false
-let parar2 = false
-// let itv = null //M1
-const mover = (dir) => {
-    let pos = parseInt(carro.style.left)
-    if (pos >= (dir * -1)) {
-        pos += dir
-        carro.style.left = `${pos}px`
-        console.log(pos)
-    }
-}
+// const init = (x) => {
+//     x.style.position = "relative"
+//     x.style.left = "0px"
+// }
+// init(carro)
+// let parar = false
+// let parar2 = false
+// // let itv = null //M1]
+// let tamMax = window.innerWidth - parseInt(carro.style.width)
+// window.addEventListener("resize", () => {
+//     tamMax = window.innerWidth - parseInt(carro.style.width)
+//     if ((pos + parseInt(carro.style.width)) > window.innerWidth) {
+//         pos = tamMax
+//         carro.style.left = `${pos}px`
+//     }
+// })
+// let pos = null
+// const mover = (dir) => {
+//     pos = parseInt(carro.style.left)
+//     pos += dir
+//     carro.style.left = `${pos}px`
+//     console.log(pos)
+//     if (pos <= 0) {
+//         pos = 0
+//         carro.style.left = `${pos}px`
+//     }
+//     else if (pos >= (tamMax)) {
+//         pos = (tamMax)
+//         carro.style.left = `${pos}px`
 
-let intervalo = {
-    nome: null,
-    ativar: function (dir) {
-        this.nome = setInterval(mover, 10, dir)
-    },
-    desativar: function () {
-        clearInterval(this.nome)
-    }
-}//M2/M3
 
-btn_left.addEventListener("click", (evt) => {
-    // clearInterval(itv)//M1
-    // intervalo.desativar()//M2
-    clearInterval(intervalo.nome)//M3
-    if (parar2) {
-        if (!parar) {
-            // clearInterval(itv) //M1
-            // itv = setInterval(mover, 10, -10) //M1
-            // intervalo.desativar()//M2
-            clearInterval(intervalo.nome)//M3
-            intervalo.ativar(-10)//M2
-            parar = true
-        }
-        else if (parar) {
-            // clearInterval(itv)//M1
-            // intervalo.desativar()//M2
-            clearInterval(intervalo.nome)//M3
-            parar = false
-        }
-    }
-    else {
-        // clearInterval(itv)//M1
-        // itv = setInterval(mover, 10, -10)//M1
-        // intervalo.desativar()//M2
-        clearInterval(intervalo.nome)//M3
-        intervalo.ativar(-10)//M2
-        parar2 = true
-    }
-})
+//     }
+// }
 
-btn_right.addEventListener("click", (evt) => {
-    // clearInterval(itv)//M1
-    // intervalo.desativar()//M2
-    clearInterval(intervalo.nome)//M3
-    if (!parar2) {
-        if (!parar) {
-            // clearInterval(itv)//M1
-            // itv = setInterval(mover, 10, 10)//M1
-            // intervalo.desativar()//M2
-            clearInterval(intervalo.nome)//M3
-            intervalo.ativar(10)//M2
-            parar = true
-        }
-        else if (parar) {
-            // clearInterval(itv)//M1
-            // intervalo.desativar()//M2
-            clearInterval(intervalo.nome)//M3
-            parar = false
-        }
-    }
-    else {
-        // clearInterval(itv)//M1
-        // itv = setInterval(mover, 10, 10)//M1
-        // intervalo.desativar()//M2
-        clearInterval(intervalo.nome)//M3
-        intervalo.ativar(10)//M2
-        parar2 = false
-    }
+// let intervalo = {
+//     nome: null,
+//     ativar: function (dir) {
+//         this.nome = setInterval(mover, 10, dir)
+//     },
+//     desativar: function () {
+//         clearInterval(this.nome)
+//     }
+// }//M2/M3
 
-})
+// btn_left.addEventListener("click", (evt) => {
+//     // clearInterval(itv)//M1
+//     // intervalo.desativar()//M2
+//     clearInterval(intervalo.nome)//M3
+//     if (parar2) {
+//         if (!parar) {
+//             // clearInterval(itv) //M1
+//             // itv = setInterval(mover, 10, -10) //M1
+//             // intervalo.desativar()//M2
+//             clearInterval(intervalo.nome)//M3
+//             intervalo.ativar(-10)//M2
+//             parar = true
+//         }
+//         else if (parar) {
+//             // clearInterval(itv)//M1
+//             // intervalo.desativar()//M2
+//             clearInterval(intervalo.nome)//M3
+//             parar = false
+//         }
+//     }
+//     else {
+//         // clearInterval(itv)//M1
+//         // itv = setInterval(mover, 10, -10)//M1
+//         // intervalo.desativar()//M2
+//         clearInterval(intervalo.nome)//M3
+//         intervalo.ativar(-10)//M2
+//         parar2 = true
+//     }
+// })
 
+// btn_right.addEventListener("click", (evt) => {
+//     // clearInterval(itv)//M1
+//     // intervalo.desativar()//M2
+//     clearInterval(intervalo.nome)//M3
+//     if (!parar2) {
+//         if (!parar) {
+//             // clearInterval(itv)//M1
+//             // itv = setInterval(mover, 10, 10)//M1
+//             // intervalo.desativar()//M2
+//             clearInterval(intervalo.nome)//M3
+//             intervalo.ativar(10)//M2
+//             parar = true
+//         }
+//         else if (parar) {
+//             // clearInterval(itv)//M1
+//             // intervalo.desativar()//M2
+//             clearInterval(intervalo.nome)//M3
+//             parar = false
+//         }
+//     }
+//     else {
+//         // clearInterval(itv)//M1
+//         // itv = setInterval(mover, 10, 10)//M1
+//         // intervalo.desativar()//M2
+//         clearInterval(intervalo.nome)//M3
+//         intervalo.ativar(10)//M2
+//         parar2 = false
+//     }
+
+// })
+
+// 48.2 - A111 - Breve utilização do event keydown com condições evt.code="ArrowUp"
+
+// 49 - getBoundingClientRect() - Método MUITO IMPORTANTE E ÚTIL para descobrir as propriedades de um elemento HTML, dessas propriedades são=(x,y,left,right,top,bottom,width,heigth)
+
+// CODE:
+
+// const mainBox = document.getElementById("mainBox")
+
+// let domRect_mainbox = mainBox.getBoundingClientRect() //Todos os 8 valores
+// console.log(domRect_mainbox) //Todos os 8 valores
+
+// console.log(`x = ${domRect_mainbox.x}`) //Valor da posição x
+// console.log(`y = ${domRect_mainbox.y}`) //Valor da posição y
+// console.log(`top = ${domRect_mainbox.top}`) //Valor do top
+// console.log(`right = ${domRect_mainbox.right}`) //Valor do right
+// console.log(`bottom = ${domRect_mainbox.bottom}`)//Valor do bottom
+// console.log(`left = ${domRect_mainbox.left}`) //Valor do left
+// console.log(`width = ${domRect_mainbox.width}`) //Valor da largura(width)
+// console.log(`height = ${domRect_mainbox.height}`) //Valor da altura(height)
+
+// 50 - Propriedade acessKey - com ela você define uma tecla para acessar um elemento HTML em questão, como se estivesse clicando no elemento, para utiliza-la deve usar Alt + a tecla definida
+
+// CODE:
+
+// botaoExercicios.accessKey = "m" //Quando pressionado Alt + M, o botão de ir para página de exercicios será acionado
+
+// console.log(botaoExercicios.accessKey) //Imprimir a tecla de acesso ao elemento
+
+// 51 - Desestruturação - associar dados de objetos ou arrays em variáveis distintas
+
+// CODE:
+
+// let a, b, c, d; //Criar as var
+
+// [a, b = 0, c, d] = [1, 2, 3, "quatro"]; //Associar as var de acordo com os item do array
+
+// console.log(a);
+// console.log(b); //Alterou o valor de 0, para o inserido no array
+// console.log(c);
+// console.log(d);
+
+// let e, f, g, h;;
+
+// ({ e, f, g, h } = { e: 1, f: "2", g: 3, h: d }); //Desestruturação com objetos
+
+// console.log(e);
+// console.log(f);
+// console.log(g);
+// console.log(h);
+
+// const numeros = () => {
+//     return [10, 20, 30, 40]
+// };
+
+// [a, b, c, d] = numeros(); //Desestruturação com função
+
+// console.log(a);
+// console.log(b);
+// console.log(c);
+// console.log(d);
+
+// let num = [11, 22, 33];
+
+// [e, f, g, h] = num; //Desest. com var array com valores incompletos
+
+// console.log(e);
+// console.log(f);
+// console.log(g);
+// console.log(h);
+
+// let [z, y, w] = num; //Desest. com var array com valores completos
+
+// console.log(z)
+// console.log(y)
+// console.log(w)
+
+// let l = 10;
+// let i = 20;
+
+// [l, i] = [i, l] //Trocando valores de var
+
+// console.log(l)
+// console.log(i)
+
+// let ar_numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
+
+// let [o, u, ...n] = ar_numeros; //Usando o rest/spread
+
+// console.log(o);
+// console.log(u);
+// console.log(n);
+
+// const fa = () => {
+//     return [1, 2, 3, 4, 5]
+// };
+
+// [a, b, c, , d] = fa(); //Escolhendo o valor a ser designado do retorno de uma função
+
+// console.log(a);
+// console.log(b);
+// console.log(c);
+// console.log(d);
+
+// const obj = { nome: "marcos", idade: 18 };
+
+// let { nome, idade } = obj; //Designando var à propriedades de um obj literal de forma indireta
+
+
+// let texto = "Curso de Javascript";
+
+// let [t] = texto;
+// console.log(t);
+
+// let [t1, t2] = texto.split(" ");
+// console.log(texto.split(" "));
+// console.log(t1);
+// console.log(t2);
+
+// let [...tudo] = texto.split(" ");
+// console.log(tudo);
+
+// tudo = JSON.stringify(tudo);
+// console.log(tudo);
+// tudo = new String(tudo)
+// console.log(tudo);
+
+// 52 - Geolocalização - A116 - Se permitida a utilização da localização pelo navegador, é possivel adquirir alguns elementos como timestamp,longitude,latitude do usuário
+
+// 53 - Casos em que é obrigatório o uso de Ponto e Vírgula(;) no JS - CFB Cursos A117 e A118
+
+// 54 - Validação nativa - verificar a validação de um campo de preenchimento e poder fazer certas ações, como por exemplo gerar uma mensagem de alerta padrão para cada tipo de invalidação
+
+////////Métodos de validação do DOM:
+////checkValidity() - if(se) for validado true [Checar Validade]
+////setCustomValidity() - personalizar a mensagem de validação
+
+////////Propriedade de validação do DOM
+////validity
+////validationMessage
+
+////////Propriedades de validação - checkValidity faz a validação de todas as seguintes constantes
+/*
+customError: true, se uma mensagem de validação personalizada for definida.
+patternMismatch: true, se o valor de um elemento não corresponder ao seu atributo padrão.
+rangeOverflow: true, se o valor de um elemento for maior que seu atributo max.
+rangeUnderflow: true, se o valor de um elemento for menor que seu atributo min.
+stepMismatch: true, se o valor de um elemento for inválido por seu atributo step.
+tooLong: true, se o valor de um elemento exceder seu atributo maxLength.
+tooShort: true, se o valor de um elemento for menor que seu atributo minLength.
+typeMismatch: true, se o valor de um elemento for inválido por seu atributo type.
+valueMissing: true, se um elemento (com um atributo obrigatório) não tiver valor.
+valid: true, se o valor de um elemento for válido.
+*/
+
+// Estrutura HTML/CSS//
+
+// const container = document.createElement("div")
+// document.body.appendChild(container)
+// container.style = "width:300px;height:300px;border:3px solid black;position:absolute;left:700px;bottom:400px;display:flex;flex-direction: column;justify-content:center;align-items:center"
+// const form = document.createElement("form")
+// const input_txt = document.createElement("input")
+// const input_number = document.createElement("input")
+// const btn_validation = document.createElement("button")
+// container.appendChild(form)
+// form.appendChild(input_txt)
+// form.appendChild(input_number)
+// form.appendChild(btn_validation)
+// input_txt.setAttribute("type", "text")
+// input_txt.setAttribute("minLength", "4")
+// input_txt.setAttribute("maxLength", "8")
+// input_txt.setAttribute("required", "")
+// input_number.setAttribute("type", "number")
+// input_number.setAttribute("min", "0")
+// input_number.setAttribute("max", "10")
+// input_number.setAttribute("required", "")
+// input_number.style = "margin:10px 0 0 0;width:180px"
+// input_txt.style = "width:180px"
+// form.style = "display:flex;flex-direction:column;justify-content:center;align-items:center"
+// btn_validation.classList.add("btn")
+// btn_validation.innerHTML = "Validar"
+// const valMsg = document.createElement("p")
+// form.appendChild(valMsg)
+
+//CODE:
+
+//Mensagens padrões de validação
+// input_txt.removeAttribute("required")
+// btn_validation.addEventListener("click", (evt) => {
+//     let msg = null
+//     if (!input_number.checkValidity()) {
+//         msg = input_number.validationMessage
+//     }
+//     input_number.reportValidity()
+//     valMsg.innerHTML = msg
+//     evt.preventDefault()
+// })
+
+//Mensagens personalizadas de validação
+
+// input_txt.removeAttribute("required")
+// btn_validation.addEventListener("click", (evt) => {
+//     let estadoValidacao = input_number.validity
+//     if (estadoValidacao.valueMissing) {
+//         input_number.setCustomValidity("Mensagem de validação personalizada")
+//     } else if (estadoValidacao.rangeOverflow) {
+//         input_number.setCustomValidity("GRANDÃO DEMAIS")
+//     }
+//     else if (estadoValidacao.rangeUnderflow) {
+//         input_number.setCustomValidity("PEQUENINHO DEMAIS")
+//     }
+
+//     // input_number.reportValidity()//Reportar validade, com isso aciona para mostrar o mini alert com a mensagem customizada [aciona o mini alerta msm com o preventDefault ativado]
+//     valMsg.innerHTML = input_number.validationMessage//Dessa forma a mensagem de validação customizada vai ser inserida nesse innerHTML.
+//     evt.preventDefault()
+// })
+
+//Outra Maneira de fazer a mensagem personalizada para um campo innerHTML
+
+// input_txt.removeAttribute("required")
+// btn_validation.addEventListener("click", (evt) => {
+//     let msg = null
+//     let estadoValidacao = input_number.validity
+//     if (estadoValidacao.valueMissing) {
+//         msg = "Preencha alguma coisa :("
+//     } else if (estadoValidacao.rangeOverflow) {
+//         msg = "Valor acima do limite :/"
+//     }
+//     else if (estadoValidacao.rangeUnderflow) {
+//         msg = "Valor menor que o minímo :/"
+//     }
+//     input_number.setCustomValidity(msg) //Aparecer uma mensagem customizada como mini alerta, de acordo com o parameter(msg)
+//     input_number.reportValidity() //Se desativado o mini alerta com o preventDefault, utilizar o reportValidity
+//     valMsg.innerHTML = msg
+//     evt.preventDefault()
+// })
+
+// 55 - WebStorage - localStorage = armazenamento local das chaves e valores que são mantidas mesmo após fechar o browser sessionStorage = igual o localStorage só que quando fechado o browser as informações são perdidas
+
+// CODE:Ir em application para poder observar as chaves inseridas
+
+// window.localStorage.clear()//Limpa todas as chaves
+// localStorage.setItem("chave", "valor")//Adiciona uma chave e um valor associado à ela
+// console.log(localStorage.length) //Propriedade com o tamanho do armazenamento,ou seja,q quantas chaves com valores possuem
+// console.log(localStorage.getItem("chave")) //Método para obter o valor de uma chave
+// localStorage.setItem("chave2", "valor2")
+// localStorage.setItem("chave3", "valor3")
+// console.log(localStorage.key(0)) //Retorna a key/chave de acordo com o indice[funcionamente/lógica da ordem não compreendida]
+// localStorage.removeItem("chave2")
+// localStorage.clear()
+
+// sessionStorage. //sessionStorage possui os mesmo códigos e métodos de utilização que o localStorage, única diferença é no seu fundamento como WebStorage
+
+// 56 - FETCH para consumo de APIs - A122 -
