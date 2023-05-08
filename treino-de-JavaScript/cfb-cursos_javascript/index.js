@@ -2015,4 +2015,70 @@ valid: true, se o valor de um elemento for válido.
 
 // sessionStorage. //sessionStorage possui os mesmo códigos e métodos de utilização que o localStorage, única diferença é no seu fundamento como WebStorage
 
-// 56 - FETCH para consumo de APIs - A122 -
+// 56 - FETCH para consumo de APIs - A122 - basicamente com isso é possível acessar dados de uma API externa e trabalhar com eles, e até mesmo alterar/escrever esses dados
+
+//CAMPO HTML/CSS//
+
+const app = document.createElement("p")
+document.body.appendChild(app)
+
+// CODE:[Lembrando que o fetch é uma promise que retorna uma response(resposta)]
+
+///Maneira 1 - fetch e .then - [then espera a promessa ser resolvida]
+/* ACESSANDO DADOS */
+
+// const fet = fetch("https://ranekapi.origamid.dev/json/api/produto") //Não usar (;) porque a continuação do código é considerado como se fosse apenas uma line de código.
+//     .then(resposta => {
+//         console.log(resposta) //Imprimindo a response
+//         return resposta.json()//Método que funciona apenas dentro de um fetch [basicamente transforma a response em um objeto json/array de objetos]
+//     })
+//     .then(respostaJSON => {
+//         console.log(respostaJSON)//Imprimiu o retorno do algumento(resposta) [resposta.json()]
+//         let item1 = JSON.stringify(respostaJSON[2]) //Transformando JSON em string
+//         console.log(item1) // Imprimindo o JSON transformado em string
+//         app.innerHTML = respostaJSON[2].nome //Imprimindo do arrayJSON no indice(2), a propriedade "nome"
+//         app.innerHTML += "<br/>Preço:" + respostaJSON[2].preco //Imprimindo a propriedade "preco"
+//     });
+// console.log(fet); // Imprimindo a promise
+
+// /* ALTERANDO/ADICIONANDO DADOS - (https://ranek.origamid.dev/login) - alterar dados e "criar" uma conta nesse site utilizando a API*/
+
+// const dados = {
+//     id: "marcoscos",
+//     nome: "Marcos",
+//     email: "marcos@marcos.com",
+//     senha: "123456",
+//     cep: "123456",
+//     rua: "Rua Acre",
+//     numero: "999",
+//     bairro: "Dino",
+//     cidade: "Jurrasic",
+//     estado: "Park"
+// };//Dados do usuario do site
+
+
+// fetch("https://ranekapi.origamid.dev/json/api/usuario", {
+//     method: "POST",//Método de POST[Colocando uma informação no servidor]
+//     headers: {
+//         "Content-Type": "application/json"
+//     },//Cabeçalho[Qual o tipo de conteúdo que está sendo enviado para o servidor(Aplicação json)]
+//     body: JSON.stringify(dados) //Corpo[o que será enviado para o servidor](precisa ser mandado em formato de string por isso o stringify)
+// });
+
+
+///Maneira 2 - fetch e async/await
+
+//podemos colocar try{} catch(e){}
+//para lidarmos com erros
+
+async function fet(url) {
+    const resposta = await fetch(url); //Com o await, a variavel "resposta" espera a promesa "fetch()" terminar de executar, para ai então armazenar seu valor que é a "response" da "promise"
+    console.log(resposta); //Conteúdo "resposta" com o retorno da promise aguardada(usando o await)[retornou uma RESPONSE]
+    const resposta2 = fetch(url);
+    console.log(resposta2);//Conteúdo "resposta2" sem o retorno da promise aguardada(sem o await)[retornou uma PROMISE]
+    const json = await resposta.json(); //Método json() também é uma promise porque ele aguarda o valor de outro promessa(o fetch dentro da resposta), ou seja, sem o await, retornaria[PROMISE] ao invés de um json
+    return json;
+};//Com isso, já é possível acessar o response que foi convertido em obeject/array json.[função assincrona que espera(await) o promise]
+
+fet("https://ranekapi.origamid.dev/json/api/produto").then(any => app.innerHTML = any[0].nome)
+
