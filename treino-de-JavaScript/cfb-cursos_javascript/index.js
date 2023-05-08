@@ -2019,19 +2019,19 @@ valid: true, se o valor de um elemento for válido.
 
 //CAMPO HTML/CSS//
 
-const app = document.createElement("p")
-document.body.appendChild(app)
+// const app = document.createElement("p")
+// document.body.appendChild(app)
 
 // CODE:[Lembrando que o fetch é uma promise que retorna uma response(resposta)]
 
-///Maneira 1 - fetch e .then - [then espera a promessa ser resolvida]
+///Maneira 1 - fetch e .then - [then espera a promessa ser resolvida e recebe o retorno do item anterior]
 /* ACESSANDO DADOS */
 
 // const fet = fetch("https://ranekapi.origamid.dev/json/api/produto") //Não usar (;) porque a continuação do código é considerado como se fosse apenas uma line de código.
 //     .then(resposta => {
-//         console.log(resposta) //Imprimindo a response
-//         return resposta.json()//Método que funciona apenas dentro de um fetch [basicamente transforma a response em um objeto json/array de objetos]
-//     })
+//         console.log(resposta) //Imprimindo a response[os dados que a API está retornando]
+//         return resposta.json()//Método que funciona apenas para respostas de uma promessa [basicamente transforma a response em um objeto json/array de objetos json]
+//     })/////////////////////////Há vários outros métodos para o response de um promise, possivel ver os métodos através do console.log da response
 //     .then(respostaJSON => {
 //         console.log(respostaJSON)//Imprimiu o retorno do algumento(resposta) [resposta.json()]
 //         let item1 = JSON.stringify(respostaJSON[2]) //Transformando JSON em string
@@ -2071,14 +2071,58 @@ document.body.appendChild(app)
 //podemos colocar try{} catch(e){}
 //para lidarmos com erros
 
-async function fet(url) {
-    const resposta = await fetch(url); //Com o await, a variavel "resposta" espera a promesa "fetch()" terminar de executar, para ai então armazenar seu valor que é a "response" da "promise"
-    console.log(resposta); //Conteúdo "resposta" com o retorno da promise aguardada(usando o await)[retornou uma RESPONSE]
-    const resposta2 = fetch(url);
-    console.log(resposta2);//Conteúdo "resposta2" sem o retorno da promise aguardada(sem o await)[retornou uma PROMISE]
-    const json = await resposta.json(); //Método json() também é uma promise porque ele aguarda o valor de outro promessa(o fetch dentro da resposta), ou seja, sem o await, retornaria[PROMISE] ao invés de um json
-    return json;
-};//Com isso, já é possível acessar o response que foi convertido em obeject/array json.[função assincrona que espera(await) o promise]
+// async function fet(url) {
+//     const resposta = await fetch(url); //Com o await, a variavel "resposta" espera a promesa "fetch()" terminar de executar, para ai então armazenar seu valor que é a "response" da "promise"
+//     console.log(resposta); //Conteúdo "resposta" com o retorno da promise aguardada(usando o await)[retornou uma RESPONSE]
+//     const resposta2 = fetch(url);
+//     console.log(resposta2);//Conteúdo "resposta2" sem o retorno da promise aguardada(sem o await)[retornou uma PROMISE]
+//     const json = await resposta.json(); //Método json() também é uma promise porque ele aguarda o valor de outro promessa(o fetch dentro da resposta), ou seja, sem o await, retornaria[PROMISE] ao invés de um json
+//     return json;
+// };//Com isso, já é possível acessar o response que foi convertido em obeject/array json.[função assincrona que espera(await) o promise]
 
-fet("https://ranekapi.origamid.dev/json/api/produto").then(any => app.innerHTML = any[0].nome)
+// fet("https://ranekapi.origamid.dev/json/api/produto").then(any => app.innerHTML = any[0].nome)
 
+//Fetch - CFB Cursos - A122-A127
+
+//57 - Chart.js - Biblioteca para criação e desenvolvimento de gráficos. A126 e A128
+
+//58 - Exercicio criando um cronômetro super preciso CFB Cursos - A129-A132
+
+//59 - Criando um topo reaproveitável A133 e A134 (topo.js e topo.css)
+
+// CODE:[PARTE HTML (Apenas colocar o script do arquivo topo e automaticamente o topo será criado)]
+
+/* <script src="topo.js"></script> */ //Colocar o script do topo antes dos outros scripts
+
+// CODE:[PARTE JS (Usar esse código em um arquivo diferente "topo.js" por exemplo)]
+
+// const head = document.head
+// const body = document.body
+
+// const estilo = "<link rel='stylesheet' type='text/css' href='topo.css'/>"
+
+// head.innerHTML += estilo
+
+// const topo = document.createElement("div")
+// topo.setAttribute("id", "topo")
+// topo.setAttribute("class", "topo")
+// body.prepend(topo)//prepend é o oposto de apendChild, ele coloca o conteúdo no começo ao invés do final
+
+// /*Formato de construção para o HTML do topo */
+
+// const logo =
+//     "<div id='logo' class='logo'>" +
+//     "<img src='ANY' title='ANY'/>" +
+//     "</div>"
+// topo.innerHTML += logo
+
+// const login =
+//     "<div id='login' class='login'>" +
+//     "<p id='email'>Email:<span></span></p>" +
+//     "<p id='senha'>Senha:<span></span></p>" +
+//     "</div>"
+// topo.innerHTML += login
+
+// //Para utilizar do css(topo.css), apenas utilizar as IDs e Class acima que foram criadas
+
+// 60 - 
